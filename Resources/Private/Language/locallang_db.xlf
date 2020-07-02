@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:course_scheduler/Resources/Private/Language/locallang_db" date="2020-06-01T16:24:40Z" product-name="course_scheduler">
+		<header/>
+		<body>
+			<trans-unit id="tx_coursescheduler_domain_model_course" resname="tx_coursescheduler_domain_model_course">
+				<source>Course</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.title" resname="tx_coursescheduler_domain_model_course.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.teaser" resname="tx_coursescheduler_domain_model_course.teaser">
+				<source>Teaser</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.description" resname="tx_coursescheduler_domain_model_course.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.notes" resname="tx_coursescheduler_domain_model_course.notes">
+				<source>Notes</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_time" resname="tx_coursescheduler_domain_model_course.course_start_time">
+				<source>Course Start Time</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_time" resname="tx_coursescheduler_domain_model_course.course_end_time">
+				<source>Course End Time</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_date" resname="tx_coursescheduler_domain_model_course.course_start_date">
+				<source>Course Start Date</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_date" resname="tx_coursescheduler_domain_model_course.course_end_date">
+				<source>Course End Date</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.category" resname="tx_coursescheduler_domain_model_course.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.access_conditions" resname="tx_coursescheduler_domain_model_course.access_conditions">
+				<source>Access Conditions</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.participation_conditions" resname="tx_coursescheduler_domain_model_course.participation_conditions">
+				<source>Participation Conditions</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.image" resname="tx_coursescheduler_domain_model_course.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.files" resname="tx_coursescheduler_domain_model_course.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.location" resname="tx_coursescheduler_domain_model_course.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
+				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.title" resname="tx_coursescheduler_domain_model_location.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.street_nr" resname="tx_coursescheduler_domain_model_location.street_nr">
+				<source>Street Nr</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.zip" resname="tx_coursescheduler_domain_model_location.zip">
+				<source>Zip</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.city" resname="tx_coursescheduler_domain_model_location.city">
+				<source>City</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.country" resname="tx_coursescheduler_domain_model_location.country">
+				<source>Country</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.description" resname="tx_coursescheduler_domain_model_location.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.link" resname="tx_coursescheduler_domain_model_location.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.longitude" resname="tx_coursescheduler_domain_model_location.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.latitude" resname="tx_coursescheduler_domain_model_location.latitude">
+				<source>Latitude</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.image" resname="tx_coursescheduler_domain_model_location.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_tag" resname="tx_coursescheduler_domain_model_tag">
+				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_tag.title" resname="tx_coursescheduler_domain_model_tag.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_tag.notes" resname="tx_coursescheduler_domain_model_tag.notes">
+				<source>Notes</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

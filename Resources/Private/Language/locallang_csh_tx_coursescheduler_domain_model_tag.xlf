@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:course_scheduler/Resources/Private/Language/locallang_csh" date="2020-06-01T16:24:40Z" product-name="course_scheduler">
+		<header/>
+		<body>
+			<trans-unit id="title.description" resname="title.description">
+				<source>Title of tag</source>
+			</trans-unit>
+			<trans-unit id="notes.description" resname="notes.description">
+				<source>Notes of tag</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

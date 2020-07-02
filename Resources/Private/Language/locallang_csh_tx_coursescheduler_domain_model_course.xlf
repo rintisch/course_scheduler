@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:course_scheduler/Resources/Private/Language/locallang_csh" date="2020-06-01T16:24:40Z" product-name="course_scheduler">
+		<header/>
+		<body>
+			<trans-unit id="title.description" resname="title.description">
+				<source>Title of course</source>
+			</trans-unit>
+			<trans-unit id="teaser.description" resname="teaser.description">
+				<source>Describes course in short</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>Long description of course</source>
+			</trans-unit>
+			<trans-unit id="notes.description" resname="notes.description">
+				<source>Additional notes</source>
+			</trans-unit>
+			<trans-unit id="course_start_time.description" resname="course_start_time.description">
+				<source>Clock time when the course starts</source>
+			</trans-unit>
+			<trans-unit id="course_end_time.description" resname="course_end_time.description">
+				<source>Clock time when the course ends</source>
+			</trans-unit>
+			<trans-unit id="course_start_date.description" resname="course_start_date.description">
+				<source>Date when the course starts</source>
+			</trans-unit>
+			<trans-unit id="course_end_date.description" resname="course_end_date.description">
+				<source>Date when the course ends</source>
+			</trans-unit>
+			<trans-unit id="category.description" resname="category.description">
+				<source>Category of event</source>
+			</trans-unit>
+			<trans-unit id="access_conditions.description" resname="access_conditions.description">
+				<source>Conditions which must be fulfilled by participants personally</source>
+			</trans-unit>
+			<trans-unit id="participation_conditions.description" resname="participation_conditions.description">
+				<source>Terms and conditions which must be fulfilled </source>
+			</trans-unit>
+			<trans-unit id="image.description" resname="image.description">
+				<source>Image of course</source>
+			</trans-unit>
+			<trans-unit id="files.description" resname="files.description">
+				<source>Files of course</source>
+			</trans-unit>
+			<trans-unit id="location.description" resname="location.description">
+				<source>location</source>
+			</trans-unit>
+			<trans-unit id="tag.description" resname="tag.description">
+				<source>tag</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

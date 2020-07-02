@@ -1,0 +1,29 @@
+{
+    "name": "rintisch/course-scheduler",
+    "type": "typo3-cms-extension",
+    "description": "Show recurring courses in a weekly scheduler",
+	"version": "1.0.0",
+    "authors": [
+        {
+            "name": "Gerald Rintisch",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rintisch\\CourseScheduler\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rintisch\\CourseScheduler\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "rintisch/course-scheduler": "self.version",
+        "typo3-ter/course-scheduler": "self.version"
+    }
+}
