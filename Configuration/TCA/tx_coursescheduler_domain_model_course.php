@@ -20,10 +20,10 @@ return [
         'iconfile' => 'EXT:course_scheduler/Resources/Public/Icons/tx_coursescheduler_domain_model_course.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, start_time, end_time, start_date, end_date, category, access_conditions, participation_conditions, image, files, location, tag',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, access_conditions, participation_conditions, image, files, location, tag',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, start_time, end_time, start_date, end_date, category, access_conditions, participation_conditions, image, files, location, tag, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, access_conditions, participation_conditions, image, files, location, tag, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -179,9 +179,9 @@ return [
             ],
 
         ],
-        'start_time' => [
+        'course_start_time' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.start_time',
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_start_time',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -190,9 +190,9 @@ return [
                 'default' => time()
             ]
         ],
-        'end_time' => [
+        'course_end_time' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.end_time',
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_end_time',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -201,9 +201,9 @@ return [
                 'default' => time()
             ]
         ],
-        'start_date' => [
+        'course_start_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.start_date',
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_start_date',
             'config' => [
                 'dbType' => 'date',
                 'type' => 'input',
@@ -213,9 +213,9 @@ return [
                 'default' => null,
             ],
         ],
-        'end_date' => [
+        'course_end_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.end_date',
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_end_date',
             'config' => [
                 'dbType' => 'date',
                 'type' => 'input',

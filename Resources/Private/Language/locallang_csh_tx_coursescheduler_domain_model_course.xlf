@@ -27,8 +27,14 @@
 			<trans-unit id="course_end_date.description" resname="course_end_date.description">
 				<source>Date when the course ends</source>
 			</trans-unit>
-			<trans-unit id="category.description" resname="category.description">
-				<source>Category of event</source>
+			<trans-unit id="activity_category.description" resname="activity_category.description">
+				<source>Category to describe the kind of main activity in the course</source>
+			</trans-unit>
+			<trans-unit id="level_category.description" resname="level_category.description">
+				<source>Category to describe the level of the course</source>
+			</trans-unit>
+			<trans-unit id="access_category.description" resname="access_category.description">
+				<source>Category to describe the accessability of the course</source>
 			</trans-unit>
 			<trans-unit id="access_conditions.description" resname="access_conditions.description">
 				<source>Conditions which must be fulfilled by participants personally</source>

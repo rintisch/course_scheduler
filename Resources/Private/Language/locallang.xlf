@@ -30,8 +30,14 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_date" resname="tx_coursescheduler_domain_model_course.course_end_date">
 				<source>Course End Date</source>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_course.category" resname="tx_coursescheduler_domain_model_course.category">
-				<source>Category</source>
+			<trans-unit id="tx_coursescheduler_domain_model_course.activity_category" resname="tx_coursescheduler_domain_model_course.activity_category">
+				<source>Activity category</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.level_category" resname="tx_coursescheduler_domain_model_course.level_category">
+				<source>Level category</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.access_category" resname="tx_coursescheduler_domain_model_course.access_category">
+				<source>Access category</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.access_conditions" resname="tx_coursescheduler_domain_model_course.access_conditions">
 				<source>Access Conditions</source>

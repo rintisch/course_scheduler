@@ -53,7 +53,7 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $startTime = 0;
+    protected $courseStartTime = 0;
 
     /**
      * Clock time when the course ends
@@ -61,29 +61,47 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var int
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $endTime = 0;
+    protected $courseEndTime = 0;
 
     /**
      * Date when the course starts
      *
      * @var \DateTime
      */
-    protected $startDate = null;
+    protected $courseStartDate = null;
 
     /**
      * Date when the course ends
      *
      * @var \DateTime
      */
-    protected $endDate = null;
+    protected $courseEndDate = null;
 
     /**
-     * Category of event
+     * Activity category of course
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
-    protected $category = null;
+    protected $activityCategory = null;
+
+
+    /**
+     * Level category of course
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     */
+    protected $levelCategory = null;
+
+
+    /**
+     * Access category of course
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     */
+    protected $accessCategory = null;
 
     /**
      * Conditions which must be fulfilled by participants personally
@@ -151,7 +169,9 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->location = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->tag = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->category = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->accessCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->activityCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->levelCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -239,87 +259,87 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the startTime
+     * Returns the courseStartTime
      *
-     * @return int $startTime
+     * @return int $courseStartTime
      */
-    public function getStartTime()
+    public function getCourseStartTime()
     {
-        return $this->startTime;
+        return $this->courseStartTime;
     }
 
     /**
-     * Sets the startTime
+     * Sets the courseStartTime
      *
-     * @param int $startTime
+     * @param int $courseStartTime
      * @return void
      */
-    public function setStartTime(int $startTime)
+    public function setCourseStartTime(int $courseStartTime)
     {
-        $this->startTime = $startTime;
+        $this->courseStartTime = $courseStartTime;
     }
 
     /**
-     * Returns the endTime
+     * Returns the courseEndTime
      *
-     * @return int $endTime
+     * @return int $courseEndTime
      */
-    public function getEndTime()
+    public function getCourseEndTime()
     {
-        return $this->endTime;
+        return $this->courseEndTime;
     }
 
     /**
-     * Sets the endTime
+     * Sets the courseEndTime
      *
-     * @param int $endTime
+     * @param int $courseEndTime
      * @return void
      */
-    public function setEndTime(int $endTime)
+    public function setCourseEndTime(int $courseEndTime)
     {
-        $this->endTime = $endTime;
+        $this->courseEndTime = $courseEndTime;
     }
 
     /**
-     * Returns the startDate
+     * Returns the courseStartDate
      *
-     * @return \DateTime $startDate
+     * @return \DateTime $courseStartDate
      */
-    public function getStartDate()
+    public function getCourseStartDate()
     {
-        return $this->startDate;
+        return $this->courseStartDate;
     }
 
     /**
-     * Sets the startDate
+     * Sets the courseStartDate
      *
-     * @param \DateTime $startDate
+     * @param \DateTime $courseStartDate
      * @return void
      */
-    public function setStartDate(\DateTime $startDate)
+    public function setCourseStartDate(\DateTime $courseStartDate)
     {
-        $this->startDate = $startDate;
+        $this->courseStartDate = $courseStartDate;
     }
 
     /**
-     * Returns the endDate
+     * Returns the courseEndDate
      *
-     * @return \DateTime $endDate
+     * @return \DateTime $courseEndDate
      */
-    public function getEndDate()
+    public function getCourseEndDate()
     {
-        return $this->endDate;
+        return $this->courseEndDate;
     }
 
     /**
-     * Sets the endDate
+     * Sets the courseEndDate
      *
-     * @param \DateTime $endDate
+     * @param \DateTime $courseEndDate
      * @return void
      */
-    public function setEndDate(\DateTime $endDate)
+    public function setCourseEndDate(\DateTime $courseEndDate)
     {
-        $this->endDate = $endDate;
+        $this->courseEndDate = $courseEndDate;
     }
 
     /**
@@ -493,40 +513,116 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $category
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $activityCategory
      */
-    public function addCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $category)
+    public function addActivityCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $activityCategory)
     {
-        $this->category->attach($category);
+        $this->activityCategory->attach($activityCategory);
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $activityCategoryToRemove
      */
-    public function removeCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $categoryToRemove)
+    public function removeActivityCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $activityCategoryToRemove)
     {
-        $this->category->detach($categoryToRemove);
+        $this->activityCategory->detach($activityCategoryToRemove);
     }
 
     /**
-     * Returns the category
+     * Returns the activity category
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
      */
-    public function getCategory()
+    public function getActivityCategory()
     {
-        return $this->category;
+        return $this->activityCategory;
     }
 
     /**
-     * Sets the category
+     * Sets the activity category
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $category Category
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $activityCategory Category
      *
      * @return void
      */
-    public function setCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $category)
+    public function setActivityCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $activityCategory)
     {
-        $this->category = $category;
+        $this->activityCategory = $activityCategory;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $levelCategory
+     */
+    public function addLevelCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $levelCategory)
+    {
+        $this->levelCategory->attach($levelCategory);
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $levelCategoryToRemove
+     */
+    public function removeLevelCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $levelCategoryToRemove)
+    {
+        $this->levelCategory->detach($levelCategoryToRemove);
+    }
+
+    /**
+     * Returns the activity category
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getLevelCategory()
+    {
+        return $this->levelCategory;
+    }
+
+    /**
+     * Sets the activity category
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $levelCategory Category
+     *
+     * @return void
+     */
+    public function setLevelCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $levelCategory)
+    {
+        $this->levelCategory = $levelCategory;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $accessCategory
+     */
+    public function addAccessCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $accessCategory)
+    {
+        $this->accessCategory->attach($accessCategory);
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\Category $accessCategoryToRemove
+     */
+    public function removeAccessCategory(\TYPO3\CMS\Extbase\Domain\Model\Category $accessCategoryToRemove)
+    {
+        $this->accessCategory->detach($accessCategoryToRemove);
+    }
+
+    /**
+     * Returns the activity category
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getAccessCategory()
+    {
+        return $this->accessCategory;
+    }
+
+    /**
+     * Sets the activity category
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $accessCategory Category
+     *
+     * @return void
+     */
+    public function setAccessCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $accessCategory)
+    {
+        $this->accessCategory = $accessCategory;
     }
 }

@@ -1,13 +1,31 @@
 <?php
 defined('TYPO3_MODE') or die();
 
-//Add an extra categories selection field to courses table
+//Add extra categories selection field to courses table
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
-    'course_scheduler',
+    'Activity category',
     'tx_coursescheduler_domain_model_course',
-    'category',
+    'activity_category',
     [
-        'label' => 'Category',
+        'label' => 'Activity',
+        'exclude' => false
+    ]
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
+    'Level Category',
+    'tx_coursescheduler_domain_model_course',
+    'level_category',
+    [
+        'label' => 'Level',
+        'exclude' => false
+    ]
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
+    'Access category',
+    'tx_coursescheduler_domain_model_course',
+    'access_category',
+    [
+        'label' => 'Access',
         'exclude' => false
     ]
 );
