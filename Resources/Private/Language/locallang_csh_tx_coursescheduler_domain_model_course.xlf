@@ -36,12 +36,6 @@
 			<trans-unit id="access_category.description" resname="access_category.description">
 				<source>Category to describe the accessability of the course</source>
 			</trans-unit>
-			<trans-unit id="access_conditions.description" resname="access_conditions.description">
-				<source>Conditions which must be fulfilled by participants personally</source>
-			</trans-unit>
-			<trans-unit id="participation_conditions.description" resname="participation_conditions.description">
-				<source>Terms and conditions which must be fulfilled </source>
-			</trans-unit>
 			<trans-unit id="image.description" resname="image.description">
 				<source>Image of course</source>
 			</trans-unit>

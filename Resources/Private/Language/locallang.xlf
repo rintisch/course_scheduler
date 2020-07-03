@@ -39,12 +39,6 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.access_category" resname="tx_coursescheduler_domain_model_course.access_category">
 				<source>Access category</source>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_course.access_conditions" resname="tx_coursescheduler_domain_model_course.access_conditions">
-				<source>Access Conditions</source>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_course.participation_conditions" resname="tx_coursescheduler_domain_model_course.participation_conditions">
-				<source>Participation Conditions</source>
-			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.image" resname="tx_coursescheduler_domain_model_course.image">
 				<source>Image</source>
 			</trans-unit>

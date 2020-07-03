@@ -15,8 +15,6 @@ CREATE TABLE tx_coursescheduler_domain_model_course
     activity_category        int(11)          DEFAULT '0' NOT NULL,
     level_category           int(11)          DEFAULT '0' NOT NULL,
     access_category          int(11)          DEFAULT '0' NOT NULL,
-    access_conditions        text,
-    participation_conditions int(11)          DEFAULT '0' NOT NULL,
     image                    int(11) unsigned             NOT NULL default '0',
     files                    varchar(255)     DEFAULT ''  NOT NULL,
     location                 int(11) unsigned DEFAULT '0' NOT NULL,

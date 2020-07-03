@@ -104,20 +104,6 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $accessCategory = null;
 
     /**
-     * Conditions which must be fulfilled by participants personally
-     *
-     * @var string
-     */
-    protected $accessConditions = '';
-
-    /**
-     * Terms and conditions which must be fulfilled
-     *
-     * @var int
-     */
-    protected $participationConditions = 0;
-
-    /**
      * Image of course
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
@@ -340,48 +326,6 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setCourseEndDate(\DateTime $courseEndDate)
     {
         $this->courseEndDate = $courseEndDate;
-    }
-
-    /**
-     * Returns the accessConditions
-     *
-     * @return string $accessConditions
-     */
-    public function getAccessConditions()
-    {
-        return $this->accessConditions;
-    }
-
-    /**
-     * Sets the accessConditions
-     *
-     * @param string $accessConditions
-     * @return void
-     */
-    public function setAccessConditions($accessConditions)
-    {
-        $this->accessConditions = $accessConditions;
-    }
-
-    /**
-     * Returns the participationConditions
-     *
-     * @return int $participationConditions
-     */
-    public function getParticipationConditions()
-    {
-        return $this->participationConditions;
-    }
-
-    /**
-     * Sets the participationConditions
-     *
-     * @param int $participationConditions
-     * @return void
-     */
-    public function setParticipationConditions($participationConditions)
-    {
-        $this->participationConditions = $participationConditions;
     }
 
     /**
