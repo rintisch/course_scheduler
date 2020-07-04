@@ -6,6 +6,9 @@
 			<trans-unit id="title.description" resname="title.description">
 				<source>Title of the location</source>
 			</trans-unit>
+			<trans-unit id="abbreviation.description" resname="abbreviation.description">
+				<source>Abbreviation of the location</source>
+			</trans-unit>
 			<trans-unit id="street_nr.description" resname="street_nr.description">
 				<source>Street name and house number</source>
 			</trans-unit>

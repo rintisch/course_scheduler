@@ -3,6 +3,8 @@ return [
     'ctrl' => [
         'title' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_location',
         'label' => 'title',
+        'label_alt' => 'city',
+        'label_alt_force' => 1,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +18,14 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'title,street_nr,zip,city,country,description,link',
+        'searchFields' => 'title,abbreviation,street_nr,zip,city,country,description,link',
         'iconfile' => 'EXT:course_scheduler/Resources/Public/Icons/tx_coursescheduler_domain_model_location.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, street_nr, zip, city, country, description, link, longitude, latitude, image',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, abbreviation, street_nr, zip, city, country, description, link, longitude, latitude, image',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, street_nr, zip, city, country, description, link, longitude, latitude, image, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, abbreviation, street_nr, zip, city, country, description, link, longitude, latitude, image, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -122,8 +124,17 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
-                'rows' => 15,
+                'rows' => 1,
                 'eval' => 'trim,required'
+            ]
+        ],
+        'abbreviation' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_location.abbreviation',
+            'config' => [
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 1,
             ]
         ],
         'street_nr' => [
@@ -132,7 +143,7 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
-                'rows' => 15,
+                'rows' => 1,
                 'eval' => 'trim'
             ]
         ],
@@ -141,7 +152,7 @@ return [
             'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_location.zip',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 10,
                 'eval' => 'trim'
             ],
         ],
@@ -150,7 +161,7 @@ return [
             'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_location.city',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 10,
                 'eval' => 'trim'
             ],
         ],
@@ -159,7 +170,7 @@ return [
             'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_location.country',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 10,
                 'eval' => 'trim'
             ],
         ],
@@ -169,7 +180,7 @@ return [
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
-                'rows' => 15,
+                'rows' => 5,
                 'eval' => 'trim'
             ]
         ],
@@ -250,8 +261,8 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
-            
+
         ],
-    
+
     ],
 ];

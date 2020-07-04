@@ -20,71 +20,77 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Title of the location
-     * 
+     *
      * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title = '';
 
     /**
+     * Abbreviation of the location
+     * @var string
+     */
+    protected $abbreviation = '';
+
+    /**
      * Street name and house number
-     * 
+     *
      * @var string
      */
     protected $streetNr = '';
 
     /**
      * Zip of location
-     * 
+     *
      * @var string
      */
     protected $zip = '';
 
     /**
      * City of location
-     * 
+     *
      * @var string
      */
     protected $city = '';
 
     /**
      * Country of location
-     * 
+     *
      * @var string
      */
     protected $country = '';
 
     /**
      * Description of location
-     * 
+     *
      * @var string
      */
     protected $description = '';
 
     /**
      * Link to website of location
-     * 
+     *
      * @var string
      */
     protected $link = '';
 
     /**
      * longitude
-     * 
+     *
      * @var float
      */
     protected $longitude = 0.0;
 
     /**
      * latitude
-     * 
+     *
      * @var float
      */
     protected $latitude = 0.0;
 
     /**
      * image
-     * 
+     *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
      */
@@ -92,7 +98,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the title
-     * 
+     *
      * @return string $title
      */
     public function getTitle()
@@ -102,7 +108,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the title
-     * 
+     *
      * @param string $title
      * @return void
      */
@@ -113,7 +119,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the streetNr
-     * 
+     *
      * @return string $streetNr
      */
     public function getStreetNr()
@@ -123,7 +129,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the streetNr
-     * 
+     *
      * @param string $streetNr
      * @return void
      */
@@ -134,7 +140,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the zip
-     * 
+     *
      * @return string $zip
      */
     public function getZip()
@@ -144,7 +150,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the zip
-     * 
+     *
      * @param string $zip
      * @return void
      */
@@ -155,7 +161,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the city
-     * 
+     *
      * @return string $city
      */
     public function getCity()
@@ -165,7 +171,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the city
-     * 
+     *
      * @param string $city
      * @return void
      */
@@ -176,7 +182,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the country
-     * 
+     *
      * @return string $country
      */
     public function getCountry()
@@ -186,7 +192,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the country
-     * 
+     *
      * @param string $country
      * @return void
      */
@@ -197,7 +203,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the description
-     * 
+     *
      * @return string $description
      */
     public function getDescription()
@@ -207,7 +213,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the description
-     * 
+     *
      * @param string $description
      * @return void
      */
@@ -218,7 +224,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the link
-     * 
+     *
      * @return string $link
      */
     public function getLink()
@@ -228,7 +234,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the link
-     * 
+     *
      * @param string $link
      * @return void
      */
@@ -239,7 +245,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the longitude
-     * 
+     *
      * @return float $longitude
      */
     public function getLongitude()
@@ -249,7 +255,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the longitude
-     * 
+     *
      * @param float $longitude
      * @return void
      */
@@ -260,7 +266,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the latitude
-     * 
+     *
      * @return float $latitude
      */
     public function getLatitude()
@@ -270,7 +276,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the latitude
-     * 
+     *
      * @param float $latitude
      * @return void
      */
@@ -281,7 +287,7 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Returns the image
-     * 
+     *
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
      */
     public function getImage()
@@ -291,12 +297,28 @@ class Location extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * Sets the image
-     * 
+     *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
      * @return void
      */
     public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAbbreviation(): string
+    {
+        return $this->abbreviation;
+    }
+
+    /**
+     * @param string $abbreviation
+     */
+    public function setAbbreviation(string $abbreviation)
+    {
+        $this->abbreviation = $abbreviation;
     }
 }

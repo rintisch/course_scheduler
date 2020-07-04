@@ -4,21 +4,21 @@
 CREATE TABLE tx_coursescheduler_domain_model_course
 (
 
-    title                    varchar(255)     DEFAULT ''  NOT NULL,
-    teaser                   text,
-    description              text,
-    notes                    text,
-    course_start_time        int(11)          DEFAULT '0' NOT NULL,
-    course_end_time          int(11)          DEFAULT '0' NOT NULL,
-    course_start_date        date             DEFAULT NULL,
-    course_end_date          date             DEFAULT NULL,
-    activity_category        int(11)          DEFAULT '0' NOT NULL,
-    level_category           int(11)          DEFAULT '0' NOT NULL,
-    access_category          int(11)          DEFAULT '0' NOT NULL,
-    image                    int(11) unsigned             NOT NULL default '0',
-    files                    varchar(255)     DEFAULT ''  NOT NULL,
-    location                 int(11) unsigned DEFAULT '0' NOT NULL,
-    tag                      int(11) unsigned DEFAULT '0' NOT NULL
+    title             varchar(255)     DEFAULT ''  NOT NULL,
+    teaser            text,
+    description       text,
+    notes             text,
+    course_start_time int(11)          DEFAULT '0' NOT NULL,
+    course_end_time   int(11)          DEFAULT '0' NOT NULL,
+    course_start_date date             DEFAULT NULL,
+    course_end_date   date             DEFAULT NULL,
+    activity_category int(11)          DEFAULT '0' NOT NULL,
+    level_category    int(11)          DEFAULT '0' NOT NULL,
+    access_category   int(11)          DEFAULT '0' NOT NULL,
+    image             int(11) unsigned             NOT NULL default '0',
+    files             varchar(255)     DEFAULT ''  NOT NULL,
+    location          int(11) unsigned DEFAULT '0' NOT NULL,
+    tag               int(11) unsigned DEFAULT '0' NOT NULL
 );
 
 #
@@ -27,16 +27,17 @@ CREATE TABLE tx_coursescheduler_domain_model_course
 CREATE TABLE tx_coursescheduler_domain_model_location
 (
 
-    title       text,
-    street_nr   text,
-    zip         varchar(255)  DEFAULT ''     NOT NULL,
-    city        varchar(255)  DEFAULT ''     NOT NULL,
-    country     varchar(255)  DEFAULT ''     NOT NULL,
-    description text,
-    link        varchar(255)  DEFAULT ''     NOT NULL,
-    longitude   double(11, 2) DEFAULT '0.00' NOT NULL,
-    latitude    double(11, 2) DEFAULT '0.00' NOT NULL,
-    image       int(11) unsigned             NOT NULL default '0'
+    title        text,
+    abbreviation text,
+    street_nr    text,
+    zip          varchar(255)  DEFAULT ''     NOT NULL,
+    city         varchar(255)  DEFAULT ''     NOT NULL,
+    country      varchar(255)  DEFAULT ''     NOT NULL,
+    description  text,
+    link         varchar(255)  DEFAULT ''     NOT NULL,
+    longitude    double(11, 2) DEFAULT '0.00' NOT NULL,
+    latitude     double(11, 2) DEFAULT '0.00' NOT NULL,
+    image        int(11) unsigned             NOT NULL default '0'
 
 );
 

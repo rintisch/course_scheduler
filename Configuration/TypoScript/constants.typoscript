@@ -1,0 +1,16 @@
+plugin.tx_coursescheduler {
+  view {
+    # cat=plugin.tx_coursescheduler/file; type=string; label=Path to template root (FE)
+    templateRootPath = EXT:course_scheduler/Resources/Private/Templates/
+
+    # cat=plugin.tx_coursescheduler/file; type=string; label=Path to template partials (FE)
+    layoutRootPath = EXT:course_scheduler/Resources/Private/Layouts/
+    # cat=plugin.tx_coursescheduler/file; type=string; label=Path to template layouts (FE)
+    partialRootPath = EXT:course_scheduler/Resources/Private/Partials/
+  }
+  settings {
+    timetable {
+      daysToRemove = sun
+    }
+  }
+}

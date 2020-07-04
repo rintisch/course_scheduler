@@ -51,11 +51,15 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
 				<source>Tag</source>
 			</trans-unit>
+
 			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
 				<source>Location</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_location.title" resname="tx_coursescheduler_domain_model_location.title">
 				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_location.abbreviation" resname="tx_coursescheduler_domain_model_location.abbreviation">
+				<source>Abbreviation</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_location.street_nr" resname="tx_coursescheduler_domain_model_location.street_nr">
 				<source>Street Nr</source>
@@ -92,6 +96,28 @@
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_tag.notes" resname="tx_coursescheduler_domain_model_tag.notes">
 				<source>Notes</source>
+			</trans-unit>
+
+			<trans-unit id="tx_coursescheduler_dayOfWeek.mon" resname="tx_coursescheduler_dayOfWeek.mon">
+				<source>Monday</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_dayOfWeek.tue" resname="tx_coursescheduler_dayOfWeek.tue">
+				<source>Tuesday</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_dayOfWeek.wed" resname="tx_coursescheduler_dayOfWeek.wed">
+				<source>Wednesday</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_dayOfWeek.thu" resname="tx_coursescheduler_dayOfWeek.thu">
+				<source>Thursday</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_dayOfWeek.fri" resname="tx_coursescheduler_dayOfWeek.fri">
+				<source>Friday</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_dayOfWeek.sat" resname="tx_coursescheduler_dayOfWeek.sat">
+				<source>Saturday</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_dayOfWeek.sun" resname="tx_coursescheduler_dayOfWeek.sun">
+				<source>Sunday</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -1,0 +1,44 @@
+<div class="font-sans font-light break-words bg-primary-200 p-2 col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} row-start-{gridRow.cycle + 1} row-end-{gridRow.cycle + 2} rounded hover:bg-primary-300">
+
+    <f:if condition="{course.activityCategory}">
+        <div class="font-medium text-sm uppercase mb-2">
+            <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
+                {activityCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
+            </f:for>
+        </div>
+    </f:if>
+    <div class="font-sans font-light text-2xl">
+        {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}
+    </div>
+        <f:for each="{course.location}" as="singleLocation">
+            <div class="pr-1 p-0 leading-none mt-1">{singleLocation.city}</div>
+            <div class="text-base text-secondary-800 p-0">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}', else:'{singleLocation.title}')}</div>
+        </f:for>
+
+    <div class="mt-3 mb-4">{course.title}</div>
+    <f:if condition="{course.levelCategory}">
+        <div class="text-sm my-2">
+            <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
+                <span class="rounded-full bg-primary-100 px-2 mr-1 mb-1 inline-block">{levelCategory.title}</span>
+            </f:for>
+        </div>
+    </f:if>
+    <f:if condition="{course.accessCategory}">
+        <div class="text-sm my-2">
+            <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
+                <span class="rounded-full bg-secondary-100 px-2 mr-1 mb-1 inline-block">{accessCategory.title}</span>
+            </f:for>
+        </div>
+    </f:if>
+
+    <f:comment>
+        <!-- use for detail view-->
+
+        <div>
+            <f:format.date format="d.m">{course.courseStartDate}</f:format.date>
+            bis
+            <f:format.date format="d.m.Y">{course.courseEndDate}</f:format.date>
+        </div>
+    </f:comment>
+
+</div>

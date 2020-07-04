@@ -8,44 +8,10 @@
     <div class="course-scheduler">
         <f:if condition="{courses}">
             <f:then>
-                <f:for each="{courses}" as="course">
-                    <div class="course">
-                        <f:debug>{course}</f:debug>
-                        {course.title}<br>
-                        von {course.courseStartTime -> f:format.date(format: 'H:i')}&nbsp;Uhr bis {course.courseEndTime -> f:format.date(format: 'H:i')}&nbsp;Uhr<br>
-                        <f:format.date format="d.m">{course.courseStartDate}</f:format.date>
-                        bis
-                        <f:format.date format="d.m.Y">{course.courseEndDate}</f:format.date>
-                        <br>
-                        in
-                        <f:for each="{course.location}" as="singleLocation">
-                            {singleLocation.title}, {singleLocation.city}
-                        </f:for>
-                        <br>
-                        <f:if condition="{course.levelCategory}">
-                            Level:
-                            <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
-                                {levelCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
-                            </f:for>
-                            <br>
-                        </f:if>
-
-                        <f:if condition="{course.accessCategory}">
-                            Zugang:
-                            <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
-                                {accessCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
-                            </f:for>
-                            <br>
-                        </f:if>
-
-                        <f:if condition="{course.activityCategory}">
-                            Aktivität:
-                            <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
-                                {activityCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
-                            </f:for>
-                        </f:if>
-                    </div>
-                </f:for>
+                <h2>Vormittag</h2>
+                    <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday}" />
+                <h2>Nachmittag</h2>
+                <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday}" />
             </f:then>
             <f:else>
                 No courses given.

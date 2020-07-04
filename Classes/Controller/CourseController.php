@@ -25,11 +25,24 @@ class CourseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     protected $courseRepository = null;
 
     /**
+     * @var \Rintisch\CourseScheduler\Service\TimetableService
+     */
+    protected $timetableService = null;
+
+    /**
      * @param \Rintisch\CourseScheduler\Domain\Repository\CourseRepository $courseRepository
      */
     public function injectCourseRepository(\Rintisch\CourseScheduler\Domain\Repository\CourseRepository $courseRepository)
     {
         $this->courseRepository = $courseRepository;
+    }
+
+    /**
+     * @param \Rintisch\CourseScheduler\Service\TimetableService $timetableService
+     */
+    public function injectTimetableService(\Rintisch\CourseScheduler\Service\TimetableService $timetableService)
+    {
+        $this->timetableService = $timetableService;
     }
 
     /**
@@ -40,7 +53,8 @@ class CourseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function listAction()
     {
         $courses = $this->courseRepository->findAll();
-        $this->view->assign('courses', $courses);
+        $coursesInWeekFormat = $this->timetableService->getTimetableArray($courses, $this->settings);
+        $this->view->assign('courses', $coursesInWeekFormat);
     }
 
     /**
