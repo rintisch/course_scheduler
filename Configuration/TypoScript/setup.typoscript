@@ -24,3 +24,17 @@ plugin.tx_coursescheduler {
   }
 
 }
+
+tx_coursescheduler_ajaxPage = PAGE
+tx_coursescheduler_ajaxPage {
+  typeNum = 7390
+  config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = 0
+    admPanel = 0
+    additionalHeaders.10.header = Content-type: text/plain
+    no_cache = 0
+  }
+
+  10 < tt_content.list.20.coursescheduler_singlecourse
+}

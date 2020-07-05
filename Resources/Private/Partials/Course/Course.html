@@ -1,40 +1,51 @@
 <div class="font-sans font-light break-words bg-primary-200 p-8 md:px-2 md:py-4 col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} md:row-start-{gridRow.cycle + 1} md:row-end-{gridRow.cycle + 2} rounded hover:bg-primary-300">
-
-    <f:if condition="{course.activityCategory}">
-        <div class="font-medium text-sm uppercase mb-2">
-            <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
-                {activityCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
+    <f:link.action
+        class="course-scheduler-ajaxified no-underline hover:no-underline text-black"
+        extensionName="coursescheduler"
+        pluginName="SingleCourse"
+        controller="Course"
+        action="detail"
+        arguments="{course: course.uid}">
+        <div class="pointer-events-none">
+            <f:if condition="{course.activityCategory}">
+                <div class="font-medium text-sm uppercase mb-2 ">
+                    <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
+                        {activityCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
+                    </f:for>
+                </div>
+            </f:if>
+            <div class="font-sans font-light text-2xl">
+                {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}
+            </div>
+            <f:for each="{course.location}" as="singleLocation">
+                <div class="pr-1 p-0 leading-none mt-1">{singleLocation.city}</div>
+                <div class="text-base text-secondary-800 p-0">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}',
+                    else:'{singleLocation.title}')}
+                </div>
             </f:for>
+
+            <div class="mt-3 mb-4">{course.title}</div>
+            <f:if condition="{course.levelCategory}">
+                <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
+                    <span class="rounded-full bg-primary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
+                </f:for>
+            </f:if>
+            <f:if condition="{course.accessCategory}">
+                <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
+                    <span class="rounded-full bg-secondary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{accessCategory.title}</span>
+                </f:for>
+            </f:if>
+
+            <f:comment>
+                <!-- use for detail view-->
+
+                <div>
+                    <f:format.date format="d.m">{course.courseStartDate}</f:format.date>
+                    bis
+                    <f:format.date format="d.m.Y">{course.courseEndDate}</f:format.date>
+                </div>
+            </f:comment>
         </div>
-    </f:if>
-    <div class="font-sans font-light text-2xl">
-        {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}
-    </div>
-        <f:for each="{course.location}" as="singleLocation">
-            <div class="pr-1 p-0 leading-none mt-1">{singleLocation.city}</div>
-            <div class="text-base text-secondary-800 p-0">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}', else:'{singleLocation.title}')}</div>
-        </f:for>
 
-    <div class="mt-3 mb-4">{course.title}</div>
-    <f:if condition="{course.levelCategory}">
-            <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
-                <span class="rounded-full bg-primary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
-            </f:for>
-    </f:if>
-    <f:if condition="{course.accessCategory}">
-            <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
-                <span class="rounded-full bg-secondary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{accessCategory.title}</span>
-            </f:for>
-    </f:if>
-
-    <f:comment>
-        <!-- use for detail view-->
-
-        <div>
-            <f:format.date format="d.m">{course.courseStartDate}</f:format.date>
-            bis
-            <f:format.date format="d.m.Y">{course.courseEndDate}</f:format.date>
-        </div>
-    </f:comment>
-
+    </f:link.action>
 </div>

@@ -58,12 +58,12 @@ class CourseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     }
 
     /**
-     * action show
+     * action detail
      *
      * @param \Rintisch\CourseScheduler\Domain\Model\Course $course
      * @return void
      */
-    public function showAction(\Rintisch\CourseScheduler\Domain\Model\Course $course)
+    public function detailAction(\Rintisch\CourseScheduler\Domain\Model\Course $course)
     {
         $this->view->assign('course', $course);
     }

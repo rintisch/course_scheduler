@@ -1,0 +1,58 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:e="http://typo3.org/ns/Ssch/Typo3Encore/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="General"/>
+<f:section name="content">
+    <f:if condition="{course.activityCategory}">
+        <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
+            <span class="uppercase text-primary-800 text-medium">{activityCategory.title}</span>
+        </f:for>
+    </f:if>
+    <h2 class="mt-2">{course.title}</h2>
+    <div class="grid md:grid-cols-3 gap-8 ">
+        <div class="md:col-span-2">
+
+            <f:format.html>{course.description}</f:format.html>
+            <h4 class="mb-0 mt-2"><f:translate key="tx_coursescheduler_domain_model_tag.notes" extensionName="CourseScheduler"/></h4>
+            <f:format.html>{course.notes}</f:format.html>
+        </div>
+        <div>
+            {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}&nbsp;Uhr
+            <br>
+            {course.courseStartDate -> f:format.date(format: 'd.m')} - {course.courseEndDate -> f:format.date(format: 'd.m.Y')}
+
+            <div class="my-4">
+            <f:if condition="{course.levelCategory}">
+                <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
+                    <span class="rounded-full bg-primary-200 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
+                </f:for>
+            </f:if>
+            </div>
+
+            <div class="my-4">
+            <f:if condition="{course.accessCategory}">
+                <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
+                    <span class="rounded-full bg-secondary-200 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{accessCategory.title}</span>
+                </f:for>
+            </f:if>
+            </div>
+
+            <div>
+                <f:for each="{course.location}" as="singleLocation">
+                    {singleLocation.title}<br>
+                    {singleLocation.streetNr}<br>
+                    {singleLocation.zip} {singleLocation.city}
+                </f:for>
+            </div>
+
+            <f:comment>{course.image}
+                {course.files}
+            </f:comment>
+        </div>
+
+
+    </div>
+</f:section>
+</html>

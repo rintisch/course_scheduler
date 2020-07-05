@@ -1,10 +1,12 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:e="http://typo3.org/ns/Ssch/Typo3Encore/ViewHelpers"
     data-namespace-typo3-fluid="true">
 
 <f:layout name="General"/>
 
 <f:section name="content">
+    <e:renderWebpackScriptTags entryName="timetable"/>
     <div class="course-scheduler">
         <f:if condition="{courses}">
             <f:then>
@@ -12,6 +14,7 @@
                     <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday}" />
                 <h2>Nachmittag</h2>
                 <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday}" />
+                <f:render partial="Course/DetailModal" />
             </f:then>
             <f:else>
                 No courses given.

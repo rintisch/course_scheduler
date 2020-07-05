@@ -11,4 +11,11 @@ call_user_func(function () {
             'Course' => 'list, detail'
         ]
     );
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Rintisch.course_scheduler',
+        'SingleCourse',
+        [
+            'Course' => 'detail'
+        ]
+    );
 });
