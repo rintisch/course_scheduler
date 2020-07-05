@@ -1,4 +1,4 @@
-<div class="font-sans font-light break-words bg-primary-200 p-2 col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} row-start-{gridRow.cycle + 1} row-end-{gridRow.cycle + 2} rounded hover:bg-primary-300">
+<div class="font-sans font-light break-words bg-primary-200 p-8 md:px-2 md:py-4 col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} md:row-start-{gridRow.cycle + 1} md:row-end-{gridRow.cycle + 2} rounded hover:bg-primary-300">
 
     <f:if condition="{course.activityCategory}">
         <div class="font-medium text-sm uppercase mb-2">
@@ -17,18 +17,14 @@
 
     <div class="mt-3 mb-4">{course.title}</div>
     <f:if condition="{course.levelCategory}">
-        <div class="text-sm my-2">
             <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
-                <span class="rounded-full bg-primary-100 px-2 mr-1 mb-1 inline-block">{levelCategory.title}</span>
+                <span class="rounded-full bg-primary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
             </f:for>
-        </div>
     </f:if>
     <f:if condition="{course.accessCategory}">
-        <div class="text-sm my-2">
             <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
-                <span class="rounded-full bg-secondary-100 px-2 mr-1 mb-1 inline-block">{accessCategory.title}</span>
+                <span class="rounded-full bg-secondary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{accessCategory.title}</span>
             </f:for>
-        </div>
     </f:if>
 
     <f:comment>
