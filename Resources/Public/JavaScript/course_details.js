@@ -29,13 +29,19 @@ function DetailController() {
       }
     });
 
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       modalBackground.classList.add("hidden");
-    })
+    });
+
+    window.addEventListener('click', function (event) {
+      if (event.target == modalBackground) {
+        modalBackground.classList.add("hidden");
+      }
+    });
   }
 }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  let courseDetailController = new DetailController();
-  courseDetailController.init();
-});
+  document.addEventListener("DOMContentLoaded", function (event) {
+    let courseDetailController = new DetailController();
+    courseDetailController.init();
+  });
