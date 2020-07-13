@@ -20,10 +20,10 @@ return [
         'iconfile' => 'EXT:course_scheduler/Resources/Public/Icons/tx_coursescheduler_domain_model_course.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, tag',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, tag, price, price_information',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, tag, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, tag, price, price_information, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -337,6 +337,42 @@ return [
                 ],
             ],
 
+        ],
+
+        'price' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.price',
+            'config' => [
+                'type' => 'input',
+                'size' => 5,
+                'eval' => 'double2',
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+            ]
+        ],
+        'price_information' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.priceinformation',
+            'config' => [
+                'type' => 'text',
+                'cols' => 40,
+                'rows' => 15,
+                'eval' => 'trim',
+                'wizards' => [
+                    'RTE' => [
+                        'icon' => 'actions-wizard-rte',
+                        'notNewRecords' => 1,
+                        'RTEonly' => 1,
+                        'module' => [
+                            'name' => 'wizard_rte',
+                        ],
+                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:bodytext.W.RTE',
+                        'type' => 'script'
+                    ]
+                ]
+            ],
+            'defaultExtras' => 'richtext:rte_transform[mode=ts_css]',
         ],
 
     ],

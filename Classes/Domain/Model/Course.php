@@ -133,6 +133,19 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $tag = null;
 
+
+    /**
+     * Price
+     *
+     * @var float
+     */
+    protected $price = 0.0;
+
+    /**
+     * @var string
+     */
+    protected $priceInformation = '';
+
     /**
      * __construct
      */
@@ -568,5 +581,39 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setAccessCategory(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $accessCategory)
     {
         $this->accessCategory = $accessCategory;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     *
+     * @return void
+     */
+    public function setPrice(float $price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPriceInformation(): string
+    {
+        return $this->priceInformation;
+    }
+
+    /**
+     * @param string $priceInformation
+     */
+    public function setPriceInformation(string $priceInformation)
+    {
+        $this->priceInformation = $priceInformation;
     }
 }

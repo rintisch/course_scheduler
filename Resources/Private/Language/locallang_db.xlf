@@ -51,6 +51,12 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
 				<source>Tag</source>
 			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.price" resname="tx_coursescheduler_domain_model_course.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.price_information" resname="tx_coursescheduler_domain_model_course.price_information">
+				<source>Price Information</source>
+			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
 				<source>Location</source>
 			</trans-unit>

@@ -24,11 +24,17 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_time" resname="tx_coursescheduler_domain_model_course.course_end_time">
 				<source>Course End Time</source>
 			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.course_time_range" resname="tx_coursescheduler_domain_model_course.course_end_time">
+				<source>Course Time Range</source>
+			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_date" resname="tx_coursescheduler_domain_model_course.course_start_date">
 				<source>Course Start Date</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_date" resname="tx_coursescheduler_domain_model_course.course_end_date">
 				<source>Course End Date</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.course_date_range" resname="tx_coursescheduler_domain_model_course.course_date_range">
+				<source>Course Date Range</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.activity_category" resname="tx_coursescheduler_domain_model_course.activity_category">
 				<source>Activity category</source>
@@ -50,6 +56,12 @@
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
 				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.price" resname="tx_coursescheduler_domain_model_course.price">
+				<source>Price</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.price_information" resname="tx_coursescheduler_domain_model_course.price_information">
+				<source>Price Information</source>
 			</trans-unit>
 
 			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
