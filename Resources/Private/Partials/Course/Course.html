@@ -19,7 +19,7 @@
             </div>
             <f:for each="{course.location}" as="singleLocation">
                 <div class="pr-1 p-0 leading-none mt-1">{singleLocation.city}</div>
-                <div class="text-base text-secondary-800 p-0">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}',
+                <div class="text-base text-secondary-800 p-0 uppercase">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}',
                     else:'{singleLocation.title}')}
                 </div>
             </f:for>

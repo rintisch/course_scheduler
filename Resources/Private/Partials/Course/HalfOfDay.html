@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 md:grid-cols-{f:count(subject: halfOfDay)} gap-2">
     <f:for each="{halfOfDay}" as="dayCourses" key="dayname" iteration="gridCol">
             <div class="bg-primary-300 text-center p-2 col-start-1 mt-8 md:mt-0 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} rounded">
-                <h3 class="text-center text-xl text-secondary-900 p-0 m-0"><f:translate key="tx_coursescheduler_dayOfWeek.{dayname}" /></h3>
+                <h3 class="text-center text-lg text-secondary-900 p-0 m-0 uppercase"><f:translate key="tx_coursescheduler_dayOfWeek.{dayname}" /></h3>
             </div>
             <f:for each="{dayCourses}" as="course" iteration="gridRow">
                 <f:render partial="Course/Course" arguments="{course: course, gridRow: gridRow, gridCol: gridCol}" />
