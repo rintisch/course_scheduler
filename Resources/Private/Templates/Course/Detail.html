@@ -15,35 +15,35 @@
         <div class="md:col-span-2">
 
             <f:format.html>{course.description}</f:format.html>
-            <h4 class="mb-0 mt-2">
+            <h4 class="mb-0 mt-5">
                 <f:translate key="tx_coursescheduler_domain_model_tag.notes" extensionName="CourseScheduler"/>
             </h4>
             <f:format.html>{course.notes}</f:format.html>
         </div>
         <div class="font-sans text-base font-light">
 
-            <div class="mt-4">
-                <span class="font-medium uppercase text-base text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.course_time_range"/>:</span><br>
+            <div>
+                <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.course_time_range"/>:</span><br>
                 {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}&nbsp;Uhr
             </div>
 
-            <div class="mt-4">
-                <span class="font-medium uppercase text-base text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.course_date_range"/>:</span><br>
+            <div class="mt-5">
+                <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.course_date_range"/>:</span><br>
                 {course.courseStartDate -> f:format.date(format: 'd.m')} - {course.courseEndDate -> f:format.date(format: 'd.m.Y')}
             </div>
 
             <f:if condition="{course.price}">
-                <div class="mt-4">
-                    <span class="font-medium uppercase text-base text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.price"/>:</span><br>
-                    <span class="font-medium">{course.price}</span>&nbsp;€
+                <div class="mt-5">
+                    <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.price"/>:</span><br>
+                    <span class="font-medium"><f:format.currency>{course.price}</f:format.currency></span>&nbsp;€
                     <f:if condition="{course.priceInformation}">
-                        <div class="text-gray-600 text-base">{course.priceInformation}</div>
+                        <div class="text-gray-600 text-sm">{course.priceInformation}</div>
                     </f:if>
                 </div>
             </f:if>
 
-            <div class="mt-4">
-                <span class="font-medium uppercase text-base text-color-gray-600 text-base text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.location"/>:</span><br>
+            <div class="mt-5">
+                <span class="font-medium uppercase text-sm text-color-gray-600 text-base text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.location"/>:</span><br>
                 <f:for each="{course.location}" as="singleLocation">
                     {singleLocation.title}<br>
                     {singleLocation.streetNr}<br>
@@ -51,7 +51,7 @@
                 </f:for>
             </div>
 
-            <div class="my-4">
+            <div class="mt-5 my-4">
                 <f:if condition="{course.levelCategory}">
                     <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
                         <span class="rounded-full bg-primary-200 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
@@ -59,7 +59,7 @@
                 </f:if>
             </div>
 
-            <div class="my-4">
+            <div class="mt-5 my-4">
                 <f:if condition="{course.accessCategory}">
                     <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
                         <span class="rounded-full bg-secondary-200 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{accessCategory.title}</span>
