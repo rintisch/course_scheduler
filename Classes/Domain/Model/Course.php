@@ -126,15 +126,6 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $location = null;
 
     /**
-     * tag
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Rintisch\CourseScheduler\Domain\Model\Tag>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-     */
-    protected $tag = null;
-
-
-    /**
      * Price
      *
      * @var float
@@ -167,7 +158,6 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected function initStorageObjects()
     {
         $this->location = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->tag = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->accessCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->activityCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->levelCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -424,49 +414,6 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setLocation(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $location)
     {
         $this->location = $location;
-    }
-
-    /**
-     * Adds a Tag
-     *
-     * @param \Rintisch\CourseScheduler\Domain\Model\Tag $tag
-     * @return void
-     */
-    public function addTag(\Rintisch\CourseScheduler\Domain\Model\Tag $tag)
-    {
-        $this->tag->attach($tag);
-    }
-
-    /**
-     * Removes a Tag
-     *
-     * @param \Rintisch\CourseScheduler\Domain\Model\Tag $tagToRemove The Tag to be removed
-     * @return void
-     */
-    public function removeTag(\Rintisch\CourseScheduler\Domain\Model\Tag $tagToRemove)
-    {
-        $this->tag->detach($tagToRemove);
-    }
-
-    /**
-     * Returns the tag
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Rintisch\CourseScheduler\Domain\Model\Tag> $tag
-     */
-    public function getTag()
-    {
-        return $this->tag;
-    }
-
-    /**
-     * Sets the tag
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Rintisch\CourseScheduler\Domain\Model\Tag> $tag
-     * @return void
-     */
-    public function setTag(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tag)
-    {
-        $this->tag = $tag;
     }
 
     /**

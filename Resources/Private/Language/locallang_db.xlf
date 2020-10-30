@@ -3,6 +3,19 @@
 	<file source-language="en" datatype="plaintext" original="EXT:course_scheduler/Resources/Private/Language/locallang_db" date="2020-06-01T16:24:40Z" product-name="course_scheduler">
 		<header/>
 		<body>
+			<trans-unit id="categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="category.access_category">
+				<source>Access</source>
+			</trans-unit>
+			<trans-unit id="category.activity_category">
+				<source>Activity</source>
+			</trans-unit>
+			<trans-unit id="category.level_category">
+				<source>Level</source>
+			</trans-unit>
+
 			<trans-unit id="tx_coursescheduler_domain_model_course" resname="tx_coursescheduler_domain_model_course">
 				<source>Course</source>
 			</trans-unit>
@@ -18,11 +31,17 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.notes" resname="tx_coursescheduler_domain_model_course.notes">
 				<source>Notes</source>
 			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.hour_range" resname="tx_coursescheduler_domain_model_course.hour_range">
+				<source>Course hour range</source>
+			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_time" resname="tx_coursescheduler_domain_model_course.course_start_time">
 				<source>Course Start Time</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_time" resname="tx_coursescheduler_domain_model_course.course_end_time">
 				<source>Course End Time</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.date_range" resname="tx_coursescheduler_domain_model_course.date_range">
+				<source>Course date range</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_date" resname="tx_coursescheduler_domain_model_course.course_start_date">
 				<source>Course Start Date</source>
@@ -48,15 +67,19 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.location" resname="tx_coursescheduler_domain_model_course.location">
 				<source>Location</source>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
-				<source>Tag</source>
-			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.price" resname="tx_coursescheduler_domain_model_course.price">
 				<source>Price</source>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.price_information" resname="tx_coursescheduler_domain_model_course.price_information">
 				<source>Price Information</source>
 			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.time_and_location" resname="tx_coursescheduler_domain_model_course.time_and_location">
+				<source>Times and location</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.categories" resname="tx_coursescheduler_domain_model_course.categories">
+				<source>Categories</source>
+			</trans-unit>
+
 			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
 				<source>Location</source>
 			</trans-unit>
@@ -92,15 +115,6 @@
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_location.image" resname="tx_coursescheduler_domain_model_location.image">
 				<source>Image</source>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_tag" resname="tx_coursescheduler_domain_model_tag">
-				<source>Tag</source>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_tag.title" resname="tx_coursescheduler_domain_model_tag.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_tag.notes" resname="tx_coursescheduler_domain_model_tag.notes">
-				<source>Notes</source>
 			</trans-unit>
 		</body>
 	</file>

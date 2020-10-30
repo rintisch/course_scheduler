@@ -3,6 +3,23 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:course_scheduler/Resources/Private/Language/locallang_db" date="2020-06-01T16:24:40Z" product-name="course_scheduler">
 		<header/>
 		<body>
+			<trans-unit id="tx_coursescheduler_domain_model_course.categories">
+				<source>Categories</source>
+				<target>Kategorien</target>
+			</trans-unit>
+			<trans-unit id="category.access_category">
+				<source>Access</source>
+				<target>Zugänglichkeit</target>
+			</trans-unit>
+			<trans-unit id="category.activity_category">
+				<source>Activity</source>
+				<target>Aktivität</target>
+			</trans-unit>
+			<trans-unit id="category.level_category">
+				<source>Level</source>
+				<target>Niveau / Level</target>
+			</trans-unit>
+
 			<trans-unit id="tx_coursescheduler_domain_model_course" resname="tx_coursescheduler_domain_model_course">
 				<source>Course</source>
 				<target>Kurs</target>
@@ -23,6 +40,10 @@
 				<source>Notes</source>
 				<target>Hinweise</target>
 			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.hour_range" resname="tx_coursescheduler_domain_model_course.hour_range">
+				<source>Course hour range</source>
+				<target>Kurszeiten</target>
+			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_time" resname="tx_coursescheduler_domain_model_course.course_start_time">
 				<source>Course Start Time</source>
 				<target>Kursbeginn (Uhrzeit)</target>
@@ -30,6 +51,10 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_end_time" resname="tx_coursescheduler_domain_model_course.course_end_time">
 				<source>Course End Time</source>
 				<target>Kursende (Uhrzeit)</target>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.date_range" resname="tx_coursescheduler_domain_model_course.date_range">
+				<source>Course date range</source>
+				<target>Kurszeitraum</target>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.course_start_date" resname="tx_coursescheduler_domain_model_course.course_start_date">
 				<source>Course Start Date</source>
@@ -63,10 +88,6 @@
 				<source>Location</source>
 				<target>Ort</target>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
-				<source>Tag</source>
-				<target>Tag</target>
-			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.price" resname="tx_coursescheduler_domain_model_course.price">
 				<source>Price</source>
 				<target>Preis</target>
@@ -74,6 +95,14 @@
 			<trans-unit id="tx_coursescheduler_domain_model_course.price_information" resname="tx_coursescheduler_domain_model_course.price_information">
 				<source>Price Information</source>
 				<target>Preis-Information</target>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.time_and_location" resname="tx_coursescheduler_domain_model_course.time_and_location">
+				<source>Times and location</source>
+				<target>Zeiten und Ort</target>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_domain_model_course.categories" resname="tx_coursescheduler_domain_model_course.categories">
+				<source>Categories</source>
+				<target>Kategorien</target>
 			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
 				<source>Location</source>

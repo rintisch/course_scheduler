@@ -73,10 +73,6 @@
 				<source>Location</source>
 				<target>Ort</target>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_course.tag" resname="tx_coursescheduler_domain_model_course.tag">
-				<source>Tag</source>
-				<target>Tag</target>
-			</trans-unit>
 			<trans-unit id="tx_coursescheduler_domain_model_course.price" resname="tx_coursescheduler_domain_model_course.price">
 				<source>Price</source>
 				<target>Preis</target>

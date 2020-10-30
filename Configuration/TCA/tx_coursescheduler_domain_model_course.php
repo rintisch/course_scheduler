@@ -1,4 +1,7 @@
 <?php
+
+$ll = 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:';
+
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course',
@@ -20,10 +23,30 @@ return [
         'iconfile' => 'EXT:course_scheduler/Resources/Public/Icons/tx_coursescheduler_domain_model_course.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, tag, price, price_information',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, price, price_information',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, teaser, description, notes, course_start_time, course_end_time, course_start_date, course_end_date, access_category, activity_category, level_category, image, files, location, tag, price, price_information, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => [
+            'showitem' => '
+            sys_language_uid, l10n_parent, l10n_diffsource,
+            title, teaser, description, notes, image, files,
+            --div--;' . $ll . 'tx_coursescheduler_domain_model_course.time_and_location,
+                --palette--;' . $ll . 'tx_coursescheduler_domain_model_course.date_range;date_range,
+                --palette--;' . $ll . 'tx_coursescheduler_domain_model_course.hour_range;hour_range,
+                location,
+            --div--;' . $ll . 'tx_coursescheduler_domain_model_course.categories,
+                access_category, activity_category, level_category,
+            --div--;' . $ll . 'tx_coursescheduler_domain_model_course.price,
+                price, price_information,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+                 hidden, starttime, endtime
+            '
+        ],
+    ],
+    'palettes' => [
+        'date_range' => ['showitem' => 'course_start_date, course_end_date'],
+        'hour_range' => ['showitem' => 'course_start_time, course_end_time'],
+        'course_categories' => ['showitem' => 'access_category, activity_category, level_category'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -118,7 +141,7 @@ return [
 
         'title' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.title',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -127,25 +150,18 @@ return [
         ],
         'teaser' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.teaser',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.teaser',
             'config' => [
                 'type' => 'text',
-                'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
-                'fieldControl' => [
-                    'fullScreenRichtext' => [
-                        'disabled' => false,
-                    ],
-                ],
                 'cols' => 40,
-                'rows' => 15,
+                'rows' => 5,
                 'eval' => 'trim',
             ],
 
         ],
         'description' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.description',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.description',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -163,7 +179,7 @@ return [
         ],
         'notes' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.notes',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.notes',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -181,7 +197,7 @@ return [
         ],
         'course_start_time' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_start_time',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.course_start_time',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -192,7 +208,7 @@ return [
         ],
         'course_end_time' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_end_time',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.course_end_time',
             'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
@@ -203,7 +219,7 @@ return [
         ],
         'course_start_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_start_date',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.course_start_date',
             'config' => [
                 'dbType' => 'date',
                 'type' => 'input',
@@ -215,7 +231,7 @@ return [
         ],
         'course_end_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.course_end_date',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.course_end_date',
             'config' => [
                 'dbType' => 'date',
                 'type' => 'input',
@@ -227,7 +243,7 @@ return [
         ],
         'image' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.image',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.image',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'image',
                 [
@@ -279,7 +295,7 @@ return [
         ],
         'files' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.files',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.files',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -288,7 +304,7 @@ return [
         ],
         'location' => [
             'exclude' => false,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.location',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.location',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -312,36 +328,10 @@ return [
             ],
 
         ],
-        'tag' => [
-            'exclude' => false,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.tag',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_coursescheduler_domain_model_tag',
-                'MM' => 'tx_coursescheduler_course_tag_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
-                'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
-                    'addRecord' => [
-                        'disabled' => false,
-                    ],
-                    'listModule' => [
-                        'disabled' => true,
-                    ],
-                ],
-            ],
-
-        ],
 
         'price' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.price',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.price',
             'config' => [
                 'type' => 'input',
                 'size' => 5,
@@ -353,7 +343,7 @@ return [
         ],
         'price_information' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course.priceinformation',
+            'label' => $ll . 'tx_coursescheduler_domain_model_course.price_information',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
