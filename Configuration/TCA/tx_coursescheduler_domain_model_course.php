@@ -6,6 +6,8 @@ return [
     'ctrl' => [
         'title' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_coursescheduler_domain_model_course',
         'label' => 'title',
+        'label_alt' => 'location',
+        'label_alt_force' => true,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
