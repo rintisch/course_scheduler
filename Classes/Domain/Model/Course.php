@@ -1,6 +1,8 @@
 <?php
+
 namespace Rintisch\CourseScheduler\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 
 /***
  *
@@ -12,6 +14,7 @@ namespace Rintisch\CourseScheduler\Domain\Model;
  *  (c) 2020 Gerald Rintisch <gerald.rintisch@posteo.de>, Rintisch
  *
  ***/
+
 /**
  * A single course
  */
@@ -107,16 +110,17 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * Image of course
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     * @Extbase\ORM\Lazy
      */
-    protected $image = null;
+    protected $image;
 
     /**
      * Files of course
      *
-     * @var string
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @Extbase\ORM\Lazy
      */
-    protected $files = '';
+    protected $files;
 
     /**
      * location
@@ -142,7 +146,6 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function __construct()
     {
-
         //Do not remove the next line: It would break the functionality
         $this->initStorageObjects();
     }
@@ -161,6 +164,8 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->accessCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->activityCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->levelCategory = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->image = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->files = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -332,9 +337,29 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * Adds an image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image Image
+     */
+    public function addImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    {
+        $this->image->attach($image);
+    }
+
+    /**
+     * Removes an image
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove Image
+     */
+    public function removeImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $imageToRemove)
+    {
+        $this->image->detach($imageToRemove);
+    }
+
+    /**
      * Returns the image
      *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $image
      */
     public function getImage()
     {
@@ -344,18 +369,37 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the image
      *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $image
-     * @return void
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $image Image
      */
-    public function setImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $image)
+    public function setImage(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $image)
     {
         $this->image = $image;
     }
 
     /**
+     * Adds a file
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $file File
+     */
+    public function addFiles(\TYPO3\CMS\Extbase\Domain\Model\FileReference $file)
+    {
+        $this->files->attach($file);
+    }
+
+    /**
+     * Removes a file
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $fileToRemove File
+     */
+    public function removeFiles(\TYPO3\CMS\Extbase\Domain\Model\FileReference $fileToRemove)
+    {
+        $this->files->detach($fileToRemove);
+    }
+
+    /**
      * Returns the files
      *
-     * @return string $files
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $files
      */
     public function getFiles()
     {
@@ -365,10 +409,9 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the files
      *
-     * @param string $files
-     * @return void
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $files Files
      */
-    public function setFiles($files)
+    public function setFiles(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $files)
     {
         $this->files = $files;
     }

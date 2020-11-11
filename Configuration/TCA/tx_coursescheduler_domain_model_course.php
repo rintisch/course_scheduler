@@ -297,12 +297,19 @@ return [
         ],
         'files' => [
             'exclude' => true,
-            'label' => $ll . 'tx_coursescheduler_domain_model_course.files',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ],
+            'label' => 'LLL:EXT:sf_event_mgt/Resources/Private/Language/locallang_db.xlf:tx_sfeventmgt_domain_model_event.files',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('files', [
+                'appearance' => [
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:media.addFileReference',
+                    'showPossibleLocalizationRecords' => true,
+                    'showRemovedLocalizationRecords' => true,
+                    'showAllLocalizationLink' => true,
+                    'showSynchronizationLink' => true
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+            ]),
         ],
         'location' => [
             'exclude' => false,
