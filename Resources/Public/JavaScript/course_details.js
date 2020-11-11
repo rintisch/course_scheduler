@@ -3,8 +3,10 @@ function DetailController() {
   let ajaxType = 7390;
 
   let modalBackground = document.getElementById("course-modal-background");
+  let modalContainer = document.getElementById("course-modal-container");
   let modalContent = document.getElementById("course-modal-content");
   let button = document.getElementById("modal-close");
+
 
   this.init = function () {
 
@@ -19,6 +21,8 @@ function DetailController() {
           if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status === 200) {
 
             let xmlCnt = httpRequest.responseText;
+            modalBackground.style.height = document.body.clientHeight + 'px';
+            modalContainer.style.marginTop = (window.pageYOffset + 32) +'px';
             modalBackground.classList.remove("hidden");
             modalContent.innerHTML = xmlCnt;
           }
@@ -33,8 +37,8 @@ function DetailController() {
       modalBackground.classList.add("hidden");
     });
 
-    window.addEventListener('click', function (event) {
-      if (event.target == modalBackground) {
+    modalBackground.addEventListener('click', function (event) {
+      if (event.target === modalBackground) {
         modalBackground.classList.add("hidden");
       }
     });
