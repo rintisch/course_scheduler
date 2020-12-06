@@ -12,13 +12,15 @@
     </f:if>
     <h2 class="mt-2">{course.title}</h2>
     <div class="grid md:grid-cols-3 gap-8 ">
-        <div class="md:col-span-2">
-
-            <f:format.html>{course.description}</f:format.html>
-            <h4 class="mb-0 mt-5">
-                <f:translate key="tx_coursescheduler_domain_model_course.notes" extensionName="CourseScheduler"/>
-            </h4>
-            <f:format.html>{course.notes}</f:format.html>
+        <div class="md:col-span-2 flex flex-col justify-between">
+            <div>
+                <f:format.html>{course.description}</f:format.html>
+                <h4 class="mb-0 mt-5">
+                    <f:translate key="tx_coursescheduler_domain_model_course.notes" extensionName="CourseScheduler"/>
+                </h4>
+                <f:format.html>{course.notes}</f:format.html>
+            </div>
+            <f:image image="{course.image}" width="544" class="rounded mt-8"/>
         </div>
         <div class="font-sans text-base font-light">
 
@@ -69,25 +71,22 @@
             <f:if condition="{course.files}">
                 <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.files"/>:</span>
                 <ul>
-                <f:for each="{course.files}" as="file">
-                    <li class="py-1">
-                        <f:if condition="{file.originalResource.title}">
-                            <f:then>
-                                <a href="{file.originalResource.publicUrl}" class="py-2" target="_blank">{file.originalResource.title}</a>
-                            </f:then>
-                            <f:else>
-                                <a href="{file.originalResource.publicUrl}" class="py-2" target="_blank">
-                                    {file.originalResource.originalFile.name}
-                                </a>
-                            </f:else>
-                        </f:if>
-                    </li>
-                </f:for>
+                    <f:for each="{course.files}" as="file">
+                        <li class="py-1">
+                            <f:if condition="{file.originalResource.title}">
+                                <f:then>
+                                    <a href="{file.originalResource.publicUrl}" class="py-2" target="_blank">{file.originalResource.title}</a>
+                                </f:then>
+                                <f:else>
+                                    <a href="{file.originalResource.publicUrl}" class="py-2" target="_blank">
+                                        {file.originalResource.originalFile.name}
+                                    </a>
+                                </f:else>
+                            </f:if>
+                        </li>
+                    </f:for>
                 </ul>
             </f:if>
-
-            <f:comment>{course.image}
-            </f:comment>
         </div>
 
     </div>
