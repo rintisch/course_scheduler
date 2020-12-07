@@ -369,7 +369,7 @@ class CourseTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function setLocationForObjectStorageContainingLocationSetsLocation()
     {
-        $location = new \Rintisch\CourseScheduler\Domain\Model\Location();
+        $location = new \DERHANSEN\SfEventMgt\Domain\Model\Location();
         $objectStorageHoldingExactlyOneLocation = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneLocation->attach($location);
         $this->subject->setLocation($objectStorageHoldingExactlyOneLocation);
@@ -386,7 +386,7 @@ class CourseTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function addLocationToObjectStorageHoldingLocation()
     {
-        $location = new \Rintisch\CourseScheduler\Domain\Model\Location();
+        $location = new \DERHANSEN\SfEventMgt\Domain\Model\Location();
         $locationObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -403,7 +403,7 @@ class CourseTest extends \TYPO3\TestingFramework\Core\Unit\UnitTestCase
      */
     public function removeLocationFromObjectStorageHoldingLocation()
     {
-        $location = new \Rintisch\CourseScheduler\Domain\Model\Location();
+        $location = new \DERHANSEN\SfEventMgt\Domain\Model\Location();
         $locationObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()

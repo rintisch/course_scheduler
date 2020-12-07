@@ -125,7 +125,7 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * location
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Rintisch\CourseScheduler\Domain\Model\Location>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DERHANSEN\SfEventMgt\Domain\Model\Location>
      */
     protected $location = null;
 
@@ -419,10 +419,10 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Location
      *
-     * @param \Rintisch\CourseScheduler\Domain\Model\Location $location
+     * @param \DERHANSEN\SfEventMgt\Domain\Model\Location $location
      * @return void
      */
-    public function addLocation(\Rintisch\CourseScheduler\Domain\Model\Location $location)
+    public function addLocation(\DERHANSEN\SfEventMgt\Domain\Model\Location $location)
     {
         $this->location->attach($location);
     }
@@ -430,10 +430,10 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Location
      *
-     * @param \Rintisch\CourseScheduler\Domain\Model\Location $locationToRemove The Location to be removed
+     * @param \DERHANSEN\SfEventMgt\Domain\Model\Location $locationToRemove The Location to be removed
      * @return void
      */
-    public function removeLocation(\Rintisch\CourseScheduler\Domain\Model\Location $locationToRemove)
+    public function removeLocation(\DERHANSEN\SfEventMgt\Domain\Model\Location $locationToRemove)
     {
         $this->location->detach($locationToRemove);
     }
@@ -441,7 +441,7 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the location
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Rintisch\CourseScheduler\Domain\Model\Location> $location
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DERHANSEN\SfEventMgt\Domain\Model\Location> $location
      */
     public function getLocation()
     {
@@ -451,7 +451,7 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the location
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Rintisch\CourseScheduler\Domain\Model\Location> $location
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\DERHANSEN\SfEventMgt\Domain\Model\Location> $location
      * @return void
      */
     public function setLocation(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $location)

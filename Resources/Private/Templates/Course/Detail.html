@@ -20,7 +20,9 @@
                 </h4>
                 <f:format.html>{course.notes}</f:format.html>
             </div>
-            <f:image image="{course.image}" width="544" class="rounded mt-8"/>
+            <f:if condition="{course.image}">
+                <f:image image="{course.image}" width="544" class="rounded mt-8"/>
+            </f:if>
         </div>
         <div class="font-sans text-base font-light">
 
