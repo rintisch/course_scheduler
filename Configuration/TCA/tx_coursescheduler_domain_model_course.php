@@ -312,30 +312,26 @@ return [
             ]),
         ],
         'location' => [
-            'exclude' => false,
-            'label' => $ll . 'tx_coursescheduler_domain_model_course.location',
+            'exclude' => true,
+            'label' => 'LLL:EXT:sf_event_mgt/Resources/Private/Language/locallang_db.xlf:tx_sfeventmgt_domain_model_event.location',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-                'foreign_table' => 'tx_coursescheduler_domain_model_location',
-                'MM' => 'tx_coursescheduler_course_location_mm',
-                'size' => 10,
-                'autoSizeMax' => 30,
-                'maxitems' => 9999,
-                'multiple' => 0,
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'tx_sfeventmgt_domain_model_location',
+                'foreign_table' => 'tx_sfeventmgt_domain_model_location',
+                'size' => 1,
+                'minitems' => 0,
+                'maxitems' => 1,
+                'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
                 'fieldControl' => [
-                    'editPopup' => [
-                        'disabled' => false,
-                    ],
                     'addRecord' => [
                         'disabled' => false,
                     ],
-                    'listModule' => [
-                        'disabled' => true,
-                    ],
                 ],
             ],
-
         ],
 
         'price' => [

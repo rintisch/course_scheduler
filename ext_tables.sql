@@ -3,7 +3,6 @@
 #
 CREATE TABLE tx_coursescheduler_domain_model_course
 (
-
     title             varchar(255)     DEFAULT ''     NOT NULL,
     teaser            text,
     description       text,
@@ -23,36 +22,10 @@ CREATE TABLE tx_coursescheduler_domain_model_course
 );
 
 #
-# Table structure for table 'tx_coursescheduler_domain_model_location'
+# Table structure for table 'tx_sfeventmgt_domain_model_location'
 #
-CREATE TABLE tx_coursescheduler_domain_model_location
+CREATE TABLE tx_sfeventmgt_domain_model_location
 (
-
-    title        text,
     abbreviation text,
-    street_nr    text,
-    zip          varchar(255)     DEFAULT ''     NOT NULL,
-    city         varchar(255)     DEFAULT ''     NOT NULL,
-    country      varchar(255)     DEFAULT ''     NOT NULL,
-    description  text,
-    link         varchar(255)     DEFAULT ''     NOT NULL,
-    longitude    double(11, 2)    DEFAULT '0.00' NOT NULL,
-    latitude     double(11, 2)    DEFAULT '0.00' NOT NULL,
-    image        int(11) unsigned DEFAULT '0'    NOT NULL
-
-);
-
-#
-# Table structure for table 'tx_coursescheduler_course_location_mm'
-#
-CREATE TABLE tx_coursescheduler_course_location_mm
-(
-    uid_local       int(11) unsigned DEFAULT '0' NOT NULL,
-    uid_foreign     int(11) unsigned DEFAULT '0' NOT NULL,
-    sorting         int(11) unsigned DEFAULT '0' NOT NULL,
-    sorting_foreign int(11) unsigned DEFAULT '0' NOT NULL,
-
-    PRIMARY KEY (uid_local, uid_foreign),
-    KEY uid_local (uid_local),
-    KEY uid_foreign (uid_foreign)
+    image        int(11) unsigned DEFAULT '0' NOT NULL
 );

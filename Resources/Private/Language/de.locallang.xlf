@@ -81,65 +81,13 @@
 				<source>Price Information</source>
 				<target>Zusätzliche Preisinformation</target>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location" resname="tx_coursescheduler_domain_model_location">
-				<source>Location</source>
-				<target>Ort</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.title" resname="tx_coursescheduler_domain_model_location.title">
-				<source>Title</source>
-				<target>Titel</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.abbreviation" resname="tx_coursescheduler_domain_model_location.abbreviation">
+			<trans-unit id="tx_sfeventmgt_domain_model_location.abbreviation" resname="tx_sfeventmgt_domain_model_location.abbreviation">
 				<source>Abbreviation</source>
-				<target>Abkürzung</target>
+				<target>Kurzbezeichnung</target>
 			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.street_nr" resname="tx_coursescheduler_domain_model_location.street_nr">
-				<source>Street Nr</source>
-				<target>Straße, Hausnummer</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.zip" resname="tx_coursescheduler_domain_model_location.zip">
-				<source>Zip</source>
-				<target>PLZ</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.city" resname="tx_coursescheduler_domain_model_location.city">
-				<source>City</source>
-				<target>Stadt</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.country" resname="tx_coursescheduler_domain_model_location.country">
-				<source>Country</source>
-				<target>Land</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.description" resname="tx_coursescheduler_domain_model_location.description">
-				<source>Description</source>
-				<target>Beschreibung</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.link" resname="tx_coursescheduler_domain_model_location.link">
-				<source>Link</source>
-				<target>Link</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.longitude" resname="tx_coursescheduler_domain_model_location.longitude">
-				<source>Longitude</source>
-				<target>Longitude</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.latitude" resname="tx_coursescheduler_domain_model_location.latitude">
-				<source>Latitude</source>
-				<target>Latitude</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_location.image" resname="tx_coursescheduler_domain_model_location.image">
+			<trans-unit id="tx_sfeventmgt_domain_model_location.image" resname="tx_sfeventmgt_domain_model_location.image">
 				<source>Image</source>
 				<target>Bild</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_tag" resname="tx_coursescheduler_domain_model_tag">
-				<source>Tag</source>
-				<target>Tag</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_tag.title" resname="tx_coursescheduler_domain_model_tag.title">
-				<source>Title</source>
-				<target>Titel</target>
-			</trans-unit>
-			<trans-unit id="tx_coursescheduler_domain_model_tag.notes" resname="tx_coursescheduler_domain_model_tag.notes">
-				<source>Notes</source>
-				<target>Hinweise</target>
 			</trans-unit>
 
 			<trans-unit id="tx_coursescheduler_dayOfWeek.mon" resname="tx_coursescheduler_dayOfWeek.mon">
