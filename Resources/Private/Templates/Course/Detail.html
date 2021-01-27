@@ -5,15 +5,16 @@
 
 <f:layout name="General"/>
 <f:section name="content">
+    <f:variable name="stylingFactLabels">font-medium uppercase text-sm text-gray-500</f:variable>
     <f:if condition="{course.activityCategory}">
         <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
             <span class="uppercase text-primary-800 text-medium">{activityCategory.title}</span>
         </f:for>
     </f:if>
     <h2 class="mt-2">{course.title}</h2>
-    <div class="grid md:grid-cols-3 gap-8 ">
+    <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2 flex flex-col justify-between">
-            <div>
+            <div class="text-xl">
                 <f:format.html>{course.description}</f:format.html>
                 <h4 class="mb-0 mt-5">
                     <f:translate key="tx_coursescheduler_domain_model_course.notes" extensionName="CourseScheduler"/>
@@ -27,18 +28,18 @@
         <div class="font-sans text-base font-light">
 
             <div>
-                <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.course_time_range"/>:</span><br>
+                <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.course_time_range"/>:</span><br>
                 {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}&nbsp;Uhr
             </div>
 
             <div class="mt-5">
-                <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.course_date_range"/>:</span><br>
-                {course.courseStartDate -> f:format.date(format: 'd.m')} - {course.courseEndDate -> f:format.date(format: 'd.m.Y')}
+                <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.course_date_range"/>:</span><br>
+                {course.courseStartDate -> f:format.date(format: '%A') -> f:format.case(mode: 'lower')}s, {course.courseStartDate -> f:format.date(format: '%d.%m.') -> f:format.case(mode: 'lower')} - {course.courseEndDate -> f:format.date(format: '%d.%m.%Y')}
             </div>
 
             <f:if condition="{course.price}">
                 <div class="mt-5">
-                    <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.price"/>:</span><br>
+                    <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.price"/>:</span><br>
                     <span class="font-medium"><f:format.currency>{course.price}</f:format.currency></span>&nbsp;€
                     <f:if condition="{course.priceInformation}">
                         <div class="text-gray-600 text-sm">{course.priceInformation}</div>
@@ -47,7 +48,7 @@
             </f:if>
 
             <div class="mt-5">
-                <span class="font-medium uppercase text-sm text-color-gray-600 text-base text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.location"/>:</span><br>
+                <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.location"/>:</span><br>
                 <f:for each="{course.location}" as="singleLocation">
                     {singleLocation.title}<br>
                     {singleLocation.streetNr}<br>
@@ -74,13 +75,13 @@
                 <span class="font-medium uppercase text-sm text-color-gray-600"><f:translate key="tx_coursescheduler_domain_model_course.files"/>:</span>
                 <ul>
                     <f:for each="{course.files}" as="file">
-                        <li class="py-1">
+                        <li class="py-1 text-base">
                             <f:if condition="{file.originalResource.title}">
                                 <f:then>
-                                    <a href="{file.originalResource.publicUrl}" class="py-2" target="_blank">{file.originalResource.title}</a>
+                                    <a href="{file.originalResource.publicUrl}" class="py-2 text-base" target="_blank">{file.originalResource.title}</a>
                                 </f:then>
                                 <f:else>
-                                    <a href="{file.originalResource.publicUrl}" class="py-2" target="_blank">
+                                    <a href="{file.originalResource.publicUrl}" class="py-2 text-base" target="_blank">
                                         {file.originalResource.originalFile.name}
                                     </a>
                                 </f:else>

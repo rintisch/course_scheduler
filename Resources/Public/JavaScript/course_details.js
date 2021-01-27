@@ -21,9 +21,8 @@ function DetailController() {
           if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status === 200) {
 
             let xmlCnt = httpRequest.responseText;
-            modalBackground.style.height = document.body.clientHeight + 'px';
-            modalContainer.style.marginTop = (window.pageYOffset + 32) +'px';
             modalBackground.classList.remove("hidden");
+            modalBackground.classList.add("flex");
             modalContent.innerHTML = xmlCnt;
           }
         };
@@ -34,11 +33,13 @@ function DetailController() {
     });
 
     button.addEventListener('click', function () {
+      modalBackground.classList.remove("flex");
       modalBackground.classList.add("hidden");
     });
 
     modalBackground.addEventListener('click', function (event) {
       if (event.target === modalBackground) {
+        modalBackground.classList.remove("flex");
         modalBackground.classList.add("hidden");
       }
     });

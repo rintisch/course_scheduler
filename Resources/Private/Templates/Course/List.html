@@ -12,7 +12,7 @@
             <f:then>
                 <h2>Vormittag</h2>
                     <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday}" />
-                <h2>Nachmittag</h2>
+                <h2 class="mt-8">Nachmittag</h2>
                 <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday}" />
             </f:then>
             <f:else>
