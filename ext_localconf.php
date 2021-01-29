@@ -18,4 +18,8 @@ call_user_func(function () {
             'Course' => 'detail'
         ]
     );
+
+    //register hooks
+    // event safe hook
+    $GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][$_EXTKEY] = 'Rintisch\\CourseScheduler\\Hooks\\EventSafeHook';
 });

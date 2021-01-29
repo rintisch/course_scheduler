@@ -1,29 +1,31 @@
 {
-    "name": "rintisch/course-scheduler",
-    "type": "typo3-cms-extension",
-    "description": "Show recurring courses in a weekly scheduler",
+	"name": "rintisch/course-scheduler",
+	"type": "typo3-cms-extension",
+	"description": "Show recurring courses in a weekly scheduler",
 	"version": "1.0.0",
-    "authors": [
-        {
-            "name": "Gerald Rintisch",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "typo3/cms-core": "^9.5 || ^10.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Rintisch\\CourseScheduler\\": "Classes"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Rintisch\\CourseScheduler\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "rintisch/course-scheduler": "self.version",
-        "typo3-ter/course-scheduler": "self.version"
-    }
+	"authors": [
+		{
+			"name": "Gerald Rintisch",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"typo3/cms-core": "^9.5 || ^10.4",
+		"php-http/guzzle6-adapter": "^2.0",
+		"geocoder-php/nominatim-provider": "^5.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Rintisch\\CourseScheduler\\": "Classes"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Rintisch\\CourseScheduler\\Tests\\": "Tests"
+		}
+	},
+	"replace": {
+		"rintisch/course-scheduler": "self.version",
+		"typo3-ter/course-scheduler": "self.version"
+	}
 }
