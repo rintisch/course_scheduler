@@ -1,6 +1,7 @@
 <?php
 namespace Rintisch\CourseScheduler\Hooks;
 
+use Geocoder\StatefulGeocoder;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use Geocoder\Provider\Nominatim\Nominatim;
 use Geocoder\Query\GeocodeQuery;
@@ -44,10 +45,10 @@ class EventSafeHook {
 
         $userAgent = "rintisch-courseScheduler";
         $httpClient = new Client();
-        $provider = new Nominatim::withOpenStreetMapServer($httpClient, $userAgent);
+        $provider = Nominatim::withOpenStreetMapServer($httpClient, $userAgent);
         $geocoder = new StatefulGeocoder($provider, 'en');
 
-        $completeAddress =  $this->getAddress($modifiedFields, $pObj);//$this->getAddress($modifiedFields, $uid);
+        $completeAddress =  $this->getAddress($modifiedFields, $pObj);
 
         try {
             $result = $geocoder->geocodeQuery(GeocodeQuery::create($completeAddress));
