@@ -1,3 +1,5 @@
+import './leaflet-map';
+
 function DetailController() {
 
   let ajaxType = 7390;
@@ -24,6 +26,8 @@ function DetailController() {
             modalBackground.classList.remove("hidden");
             modalBackground.classList.add("flex");
             modalContent.innerHTML = xmlCnt;
+
+            courseMapOnload();
           }
         };
         let ajaxUri = event.target.href + '&type=' + ajaxType;

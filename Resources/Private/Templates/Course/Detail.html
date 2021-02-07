@@ -5,22 +5,26 @@
 
 <f:layout name="General"/>
 <f:section name="content">
+
     <f:variable name="stylingFactLabels">font-medium uppercase text-sm text-gray-500</f:variable>
     <f:if condition="{course.activityCategory}">
         <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
-            <span class="uppercase text-primary-800 text-medium">{activityCategory.title}</span>
+            <span class="uppercase text-primary-800 opacity-70 text-lg sm:text-xl">{activityCategory.title}</span>
         </f:for>
     </f:if>
-    <h2 class="mt-2">{course.title}</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+    <h2 class="mt-2 text-2xl sm:text-3xl">{course.title}</h2>
+    <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-4 sm:mt-6 md:mt-10">
         <div class="md:col-span-2 flex flex-col justify-between">
-            <div class="text-xl">
+            <div class="text-lg md:text-xl">
                 <f:format.html>{course.description}</f:format.html>
                 <h4 class="mb-0 mt-5">
                     <f:translate key="tx_coursescheduler_domain_model_course.notes" extensionName="CourseScheduler"/>
                 </h4>
                 <f:format.html>{course.notes}</f:format.html>
             </div>
+            <f:if condition="{course.location}">
+                <f:render section="renderMap" arguments="{settings: settings, locations: course.location}" />
+            </f:if>
             <f:if condition="{course.image}">
                 <f:image image="{course.image}" width="544" class="rounded mt-8"/>
             </f:if>
@@ -40,7 +44,7 @@
             <f:if condition="{course.price}">
                 <div class="mt-5">
                     <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.price"/>:</span><br>
-                    <span class="font-medium"><f:format.currency>{course.price}</f:format.currency></span>&nbsp;€
+                    <span class="font-medium"><f:format.currency currencySign="€">{course.price}</f:format.currency></span>
                     <f:if condition="{course.priceInformation}">
                         <div class="text-gray-600 text-sm">{course.priceInformation}</div>
                     </f:if>
@@ -93,5 +97,31 @@
         </div>
 
     </div>
+</f:section>
+
+<f:comment><!-- RENDER MAP --></f:comment>
+<f:section name="renderMap">
+    <f:if condition="{locations.0.latitude} && {locations.0.longitude}">
+    <div id="js-course__map" class="mt-2 sm:mt-4 md:mt-8 w-full" data-default-lat="{settings.map.defaultPosition.lat}"
+        data-default-lng="{settings.map.defaultPosition.lng}" style="min-height:300px;"></div>
+    <ul id="js-course__records" style="display: none">
+        <f:for each="{locations}" as="address">
+            <f:if condition="{address.latitude} && {address.longitude}"></f:if>
+            <div id="js-course__record-{address.uid}" data-id="{address.uid}" data-lat="{address.latitude}"
+                data-lng="{address.longitude}" data-icon="icon">
+                <h6>{address.title}</h6>
+                <div>
+                    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <address>
+                            <span itemprop="streetAddress">{address.address}</span><br>
+                            <span itemprop="postalCode">{address.zip}</span>&nbsp;<span
+                            itemprop="addressLocality">{address.city}</span>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </ul>
+    </f:if>
 </f:section>
 </html>

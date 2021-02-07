@@ -20,9 +20,14 @@ plugin.tx_coursescheduler {
     timetable {
       daysToRemove = {$plugin.tx_coursescheduler.settings.timetable.daysToRemove}
     }
+    map {
 
+      defaultPosition {
+        lat = 51.93852
+        lng = 13.89971
+      }
+    }
   }
-
 }
 
 tx_coursescheduler_ajaxPage = PAGE
