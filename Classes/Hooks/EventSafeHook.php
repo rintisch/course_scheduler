@@ -1,4 +1,5 @@
 <?php
+
 namespace Rintisch\CourseScheduler\Hooks;
 
 use Geocoder\StatefulGeocoder;
@@ -7,8 +8,9 @@ use Geocoder\Provider\Nominatim\Nominatim;
 use Geocoder\Query\GeocodeQuery;
 use Http\Adapter\Guzzle6\Client;
 
-class EventSafeHook {
-     /**
+class EventSafeHook
+{
+    /**
      * Fieldnames that trigger geo decode.
      *
      * @var array
@@ -26,7 +28,8 @@ class EventSafeHook {
      *
      * @return void
      */
-    public function processDatamap_postProcessFieldArray($action, $table, $uid, array &$modifiedFields, DataHandler &$pObj) {
+    public function processDatamap_postProcessFieldArray($action, $table, $uid, array &$modifiedFields, DataHandler &$pObj)
+    {
 
         if ($this->hasToGeocode($table, $action, $modifiedFields, $pObj)) {
             $this->geocode($modifiedFields, $pObj);
@@ -39,25 +42,25 @@ class EventSafeHook {
      * @param array $modifiedFields The modified fields of the record.
      * @param object $pObj Object of page
      *
-     *  @return void
+     * @return void
      */
-    protected function geocode(&$modifiedFields, $pObj) {
+    protected function geocode(&$modifiedFields, $pObj)
+    {
 
         $userAgent = "rintisch-courseScheduler";
         $httpClient = new Client();
         $provider = Nominatim::withOpenStreetMapServer($httpClient, $userAgent);
         $geocoder = new StatefulGeocoder($provider, 'en');
 
-        $completeAddress =  $this->getAddress($modifiedFields, $pObj);
+        $completeAddress = $this->getAddress($modifiedFields, $pObj);
 
         try {
             $result = $geocoder->geocodeQuery(GeocodeQuery::create($completeAddress));
-        }
-        catch (\Exception $exception) {
+        } catch (\Exception $exception) {
             var_dump($exception->getMessage());
         }
 
-        if(sizeof($result) > 0) {
+        if (sizeof($result) > 0) {
             $modifiedFields['latitude'] = \round($result->first()->getCoordinates()->getLatitude(), 6);
             $modifiedFields['longitude'] = \round($result->first()->getCoordinates()->getLongitude(), 6);
         }
@@ -79,7 +82,7 @@ class EventSafeHook {
     {
         // Do not process if foreign table, unintended action,
         // or fields were changed explicitly.
-        if ($table !=='tx_sfeventmgt_domain_model_location' || $action !== 'update') {
+        if ($table !== 'tx_sfeventmgt_domain_model_location' || $action !== 'update') {
             return false;
         }
 
