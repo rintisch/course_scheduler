@@ -1,0 +1,16 @@
+<f:if condition="{address.latitude} && {address.longitude}">
+    <div
+        id="js-course__record-{address.uid}" data-id="{address.uid}" data-lat="{address.latitude}"
+        data-lng="{address.longitude}" data-icon="icon">
+        <h6>{address.title}</h6>
+        <div>
+            <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <address>
+                    <span itemprop="streetAddress">{address.address}</span><br>
+                    <span itemprop="postalCode">{address.zip}</span>&nbsp;<span
+                    itemprop="addressLocality">{address.city}</span>
+                </address>
+            </div>
+        </div>
+    </div>
+</f:if>

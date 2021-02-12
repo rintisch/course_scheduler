@@ -118,6 +118,20 @@
 				<source>Sunday</source>
 				<target>Sonntag</target>
 			</trans-unit>
+
+			<trans-unit id="tx_coursescheduler_partOfDay.forenoon" resname="tx_coursescheduler_partOfDay.forenoon">
+				<source>Forenoon</source>
+				<target>Vormittag</target>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_partOfDay.afternoon" resname="tx_coursescheduler_partOfDay.afternoon">
+				<source>Afternoon</source>
+				<target>Nachmittag</target>
+			</trans-unit>
+
+			<trans-unit id="tx_coursescheduler_courses.noCourses" resname="tx_coursescheduler_courses.noCourses">
+				<source>There are no courses at the moment.</source>
+				<target>Im Augenblick gibt es leider keine Kurse.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

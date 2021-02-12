@@ -6,24 +6,31 @@
 <f:layout name="General"/>
 
 <f:section name="content">
+
+    <f:render partial="JsForMap"/>
+
     <e:renderWebpackScriptTags entryName="timetable"/>
-    <f:asset.css identifier="LeafletCSS" href="EXT:course_scheduler/Resources/Public/Contrib/leaflet-core-1.4.0.css" />
-    <f:asset.script identifier="LeafletJS" src="EXT:course_scheduler/Resources/Public/JavaScript/leaflet-core-1.4.0.js" />
-    <f:asset.script identifier="CourseMaps" src="EXT:course_scheduler/Resources/Public/JavaScript/leaflet-map.js" />
 
     <div class="course-scheduler">
         <f:if condition="{courses}">
             <f:then>
-                <h2>Vormittag</h2>
-                    <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday}" />
-                <h2 class="mt-8">Nachmittag</h2>
-                <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday}" />
+                <h2>
+                    <f:translate key="tx_coursescheduler_partOfDay.forenoon"/>
+                </h2>
+                <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday}"/>
+                <h2 class="mt-8">
+                    <f:translate key="tx_coursescheduler_partOfDay.afternoon"/>
+                </h2>
+                <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday}"/>
             </f:then>
             <f:else>
-                No courses given.
+                <f:translate key="tx_coursescheduler_courses.noCourses"/>
             </f:else>
         </f:if>
     </div>
-    <f:render partial="Course/DetailModal" />
+    <f:render partial="Course/DetailModal"/>
 </f:section>
+
 </html>
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:course_scheduler/Resources/Private/Language/locallang_be" date="2020-06-01T16:24:40Z" product-name="course_scheduler">
+		<header/>
+		<body>
+			<trans-unit id="settings.rendering">
+				<source>Rendering</source>
+			</trans-unit>
+			<trans-unit id="settings.displayMode">
+				<source>Display mode</source>
+			</trans-unit>
+			<trans-unit id="settings.displayMode.scheduler">
+				<source>Scheduler</source>
+			</trans-unit>
+			<trans-unit id="settings.displayMode.map">
+				<source>Map</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -83,6 +83,9 @@
 			<trans-unit id="tx_sfeventmgt_domain_model_location.abbreviation" resname="tx_sfeventmgt_domain_model_location.abbreviation">
 				<source>Abbreviation</source>
 			</trans-unit>
+			<trans-unit id="tx_sfeventmgt_domain_model_location.autoGeocode" resname="tx_sfeventmgt_domain_model_location.autoGeocode">
+				<source>Geocode automatically</source>
+			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_location.image" resname="tx_sfeventmgt_domain_model_location.image">
 				<source>Image</source>
 			</trans-unit>

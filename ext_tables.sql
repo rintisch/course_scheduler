@@ -27,5 +27,6 @@ CREATE TABLE tx_coursescheduler_domain_model_course
 CREATE TABLE tx_sfeventmgt_domain_model_location
 (
     abbreviation text,
+    auto_geocode tinyint(4) unsigned DEFAULT '1' NOT NULL,
     image        int(11) unsigned DEFAULT '0' NOT NULL
 );

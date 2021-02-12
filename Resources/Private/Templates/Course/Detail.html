@@ -23,7 +23,7 @@
                 <f:format.html>{course.notes}</f:format.html>
             </div>
             <f:if condition="{course.location}">
-                <f:render section="renderMap" arguments="{settings: settings, locations: course.location}" />
+                <f:render section="renderMap" arguments="{settings: settings, locations: course.location}"/>
             </f:if>
             <f:if condition="{course.image}">
                 <f:image image="{course.image}" width="544" class="rounded mt-8"/>
@@ -38,7 +38,8 @@
 
             <div class="mt-5">
                 <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.course_date_range"/>:</span><br>
-                {course.courseStartDate -> f:format.date(format: '%A') -> f:format.case(mode: 'lower')}s, {course.courseStartDate -> f:format.date(format: '%d.%m.') -> f:format.case(mode: 'lower')} - {course.courseEndDate -> f:format.date(format: '%d.%m.%Y')}
+                {course.courseStartDate -> f:format.date(format: '%A') -> f:format.case(mode: 'lower')}s, {course.courseStartDate -> f:format.date(format:
+                '%d.%m.') -> f:format.case(mode: 'lower')} - {course.courseEndDate -> f:format.date(format: '%d.%m.%Y')}
             </div>
 
             <f:if condition="{course.price}">
@@ -102,26 +103,12 @@
 <f:comment><!-- RENDER MAP --></f:comment>
 <f:section name="renderMap">
     <f:if condition="{locations.0.latitude} && {locations.0.longitude}">
-    <div id="js-course__map" class="mt-2 sm:mt-4 md:mt-8 w-full" data-default-lat="{settings.map.defaultPosition.lat}"
-        data-default-lng="{settings.map.defaultPosition.lng}" style="min-height:300px;"></div>
-    <ul id="js-course__records" style="display: none">
-        <f:for each="{locations}" as="address">
-            <f:if condition="{address.latitude} && {address.longitude}"></f:if>
-            <div id="js-course__record-{address.uid}" data-id="{address.uid}" data-lat="{address.latitude}"
-                data-lng="{address.longitude}" data-icon="icon">
-                <h6>{address.title}</h6>
-                <div>
-                    <div class="address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        <address>
-                            <span itemprop="streetAddress">{address.address}</span><br>
-                            <span itemprop="postalCode">{address.zip}</span>&nbsp;<span
-                            itemprop="addressLocality">{address.city}</span>
-                        </address>
-                    </div>
-                </div>
-            </div>
-        </f:for>
-    </ul>
+        <f:render partial="Course/MapContainer" arguments="{settings: settings, height: 300}"/>
+        <ul id="js-course__records" style="display: none">
+            <f:for each="{locations}" as="address">
+                <f:render partial="Course/Address" arguments="{address: address}"/>
+            </f:for>
+        </ul>
     </f:if>
 </f:section>
 </html>

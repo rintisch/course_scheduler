@@ -1,0 +1,20 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:e="http://typo3.org/ns/Ssch/Typo3Encore/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:layout name="General"/>
+
+
+<f:section name="content">
+    <f:render partial="JsForMap"/>
+    <f:if condition="{locations}">
+        <f:render partial="Course/MapContainer" arguments="{settings: settings, height: 600}"/>
+        <ul id="js-course__records" style="display: none">
+            <f:for each="{locations}" as="location">
+                <f:render partial="Location/Address" arguments="{address: location}"/>
+            </f:for>
+        </ul>
+    </f:if>
+</f:section>
+</html>

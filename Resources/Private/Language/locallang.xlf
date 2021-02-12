@@ -89,6 +89,17 @@
 			<trans-unit id="tx_coursescheduler_dayOfWeek.sun" resname="tx_coursescheduler_dayOfWeek.sun">
 				<source>Sunday</source>
 			</trans-unit>
+
+			<trans-unit id="tx_coursescheduler_partOfDay.forenoon" resname="tx_coursescheduler_partOfDay.forenoon">
+				<source>Forenoon</source>
+			</trans-unit>
+			<trans-unit id="tx_coursescheduler_partOfDay.afternoon" resname="tx_coursescheduler_partOfDay.afternoon">
+				<source>Afternoon</source>
+			</trans-unit>
+
+			<trans-unit id="tx_coursescheduler_courses.noCourses" resname="tx_coursescheduler_courses.noCourses">
+				<source>There are no courses at the moment.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

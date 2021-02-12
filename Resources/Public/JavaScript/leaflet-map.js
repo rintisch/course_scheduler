@@ -1,22 +1,30 @@
 function courseLeaflet() {
-  var obj = {};
+  let obj = {};
+
+  let idOfMapElement = 'js-course__map';
+  let idOfRecordsElement = 'js-course__records';
+  let recordsElement = document.getElementById(idOfRecordsElement);
 
   obj.map = null;
   obj.markers = [];
 
   obj.run = function () {
 
-    obj.map = L.map('js-course__map').setView([51.505, -0.09], 13);
+    if(!(document.getElementById(idOfMapElement) && recordsElement && recordsElement.children)){
+      return;
+    }
+
+    obj.map = L.map(idOfMapElement).setView([51.505, -0.09], 13);
     var mapBounds = L.latLngBounds();
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+      attribution: 'Kartendaten &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> Mitwirkende, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        'Bilder © <a href="https://www.mapbox.com/">Mapbox</a>',
       id: 'mapbox.streets'
     }).addTo(obj.map);
 
-    var records = document.getElementById("js-course__records").children;
+    var records = recordsElement.children;
     for (var i = 0; i < records.length; i++) {
       var item = records[i];
 
@@ -39,4 +47,16 @@ function courseLeaflet() {
 function courseMapOnload() {
   var ttAddressMapInstance = courseLeaflet();
   ttAddressMapInstance.run();
+}
+
+/** event listener on DOMContentLoaded does not work with scripts which are loaded async.
+ * With TYPO3 this could e.g. happen with EXT:scriptmerger
+ * Thus we listen only if document.readyState is loading, otherwise we can already fire as DOM is loaded already.
+ **/
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", function () {
+    courseMapOnload();
+  });
+} else {
+  courseMapOnload();
 }

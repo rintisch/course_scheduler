@@ -108,6 +108,10 @@
 				<source>Abbreviation</source>
 				<target>Kurzbezeichnung</target>
 			</trans-unit>
+			<trans-unit id="tx_sfeventmgt_domain_model_location.autoGeocode" resname="tx_sfeventmgt_domain_model_location.autoGeocode">
+				<source>Geocode automatically</source>
+				<target>Geokoordinaten automatisch berechnen</target>
+			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_location.image" resname="tx_sfeventmgt_domain_model_location.image">
 				<source>Image</source>
 				<target>Bild</target>

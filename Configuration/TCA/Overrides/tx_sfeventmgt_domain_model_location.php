@@ -12,6 +12,22 @@ $fields = [
             'eval' => 'trim'
         ],
     ],
+    'auto_geocode'=> [
+        'exclude' => 1,
+        'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_sfeventmgt_domain_model_location.autoGeocode',
+        'config' => [
+            'type' => 'check',
+            'renderType' => 'checkboxToggle',
+            'items' => [
+                '0' => [
+                    '0' => '',
+                    '1' => '',
+                    'labelChecked' => 'Enabled',
+                    'labelUnchecked' => 'Disabled',
+                ],
+            ],
+        ],
+    ],
     'image' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:course_scheduler/Resources/Private/Language/locallang_db.xlf:tx_sfeventmgt_domain_model_location.image',
@@ -57,4 +73,10 @@ $fields = [
     'image',
     '',
     'after:description'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    'tx_sfeventmgt_domain_model_location',
+    'auto_geocode',
+    '',
+    'before:latitude'
 );

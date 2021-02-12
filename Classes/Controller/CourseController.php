@@ -52,9 +52,11 @@ class CourseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      */
     public function listAction()
     {
-        $courses = $this->courseRepository->findAll();
-        $coursesInWeekFormat = $this->timetableService->getTimetableArray($courses, $this->settings);
-        $this->view->assign('courses', $coursesInWeekFormat);
+        $coursesRaw = $this->courseRepository->findAll();
+
+        $courses = $this->timetableService->getTimetableArray($coursesRaw, $this->settings);
+
+        $this->view->assign('courses', $courses);
     }
 
     /**

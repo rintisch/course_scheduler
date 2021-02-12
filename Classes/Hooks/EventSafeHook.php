@@ -15,7 +15,7 @@ class EventSafeHook
      *
      * @var array
      */
-    protected $fieldsTriggerUpdate = ['address', 'city', 'country', 'zip'];
+    protected $fieldsTriggerUpdate = ['auto_geocode', 'address', 'city', 'country', 'zip'];
 
     /**
      * Hook to add latitude and longitude to locations.
@@ -86,6 +86,18 @@ class EventSafeHook
             return false;
         }
 
+        // Do not process if user disabled automatic geocoding
+        if (in_array( 'auto_geocode', $modifiedFields)) {
+            if ((int)$modifiedFields['auto_geocode'] === 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        if ((int)$pObj->checkValue_currentRecord['auto_geocode'] === 0) {
+            return false;
+        }
+
         // Only process if one of the fields was updated, containing new information.
         foreach (array_keys($modifiedFields) as $modifiedFieldName) {
             if (in_array($modifiedFieldName, $this->fieldsTriggerUpdate)) {
@@ -93,7 +105,7 @@ class EventSafeHook
             }
         }
         // If fields were empty we will geocode
-        return $pObj->checkValueCurrentRecord['latitude'] <= 0 && $pObj->checkValueCurrentRecord['longitude'] <= 0;
+        return $pObj->checkValue_currentRecord['latitude'] <= 0 && $pObj->checkValue_currentRecord['longitude'] <= 0;
     }
 
     /**

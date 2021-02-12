@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:course_scheduler/Resources/Private/Language/locallang_be.xlf:settings.rendering.title</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+
+                    <!-- Add settings here ... -->
+
+                    <settings.displayMode>
+                        <TCEforms>
+                            <label>LLL:EXT:course_scheduler/Resources/Private/Language/locallang_be.xlf:settings.displayMode</label>
+                            <config>
+                                <type>select</type>
+                                <renderType>selectSingle</renderType>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:course_scheduler/Resources/Private/Language/locallang_be.xlf:settings.displayMode.scheduler</numIndex>
+                                        <numIndex index="1">scheduler</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:course_scheduler/Resources/Private/Language/locallang_be.xlf:settings.displayMode.map</numIndex>
+                                        <numIndex index="1">map</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.displayMode>
+
+                    <!-- end of settings -->
+
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
