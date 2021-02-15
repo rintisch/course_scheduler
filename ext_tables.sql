@@ -18,7 +18,8 @@ CREATE TABLE tx_coursescheduler_domain_model_course
     files             int(11)          DEFAULT '0'    NOT NULL,
     location          int(11) unsigned DEFAULT '0'    NOT NULL,
     price             double(11, 2)    DEFAULT '0.00' NOT NULL,
-    price_information text
+    price_information text,
+    slug              varchar(2048),
 );
 
 #
@@ -28,5 +29,5 @@ CREATE TABLE tx_sfeventmgt_domain_model_location
 (
     abbreviation text,
     auto_geocode tinyint(4) unsigned DEFAULT '1' NOT NULL,
-    image        int(11) unsigned DEFAULT '0' NOT NULL
+    image        int(11) unsigned    DEFAULT '0' NOT NULL
 );

@@ -31,7 +31,7 @@ return [
         '1' => [
             'showitem' => '
             sys_language_uid, l10n_parent, l10n_diffsource,
-            title, teaser, description, notes, image, files,
+            title, teaser, description, notes, image, files, slug,
             --div--;' . $ll . 'tx_coursescheduler_domain_model_course.time_and_location,
                 --palette--;' . $ll . 'tx_coursescheduler_domain_model_course.date_range;date_range,
                 --palette--;' . $ll . 'tx_coursescheduler_domain_model_course.hour_range;hour_range,
@@ -370,5 +370,22 @@ return [
             'defaultExtras' => 'richtext:rte_transform[mode=ts_css]',
         ],
 
+        'slug' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:pages.slug',
+            'config' => [
+                'type' => 'slug',
+                'size' => 50,
+                'generatorOptions' => [
+                    'fields' => ['title'],
+                    'replacements' => [
+                        '/' => '-'
+                    ],
+                ],
+                'fallbackCharacter' => '-',
+                'eval' => 'uniqueInSite',
+                'default' => ''
+            ]
+        ],
     ],
 ];
