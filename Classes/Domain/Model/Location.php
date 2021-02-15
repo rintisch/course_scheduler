@@ -13,7 +13,7 @@ class Location extends \DERHANSEN\SfEventMgt\Domain\Model\Location
      * Abbreviation of location name
      * @var string
      */
-    protected string $abbreviation = '';
+    protected $abbreviation = '';
 
     /**
      * Image of location
@@ -27,7 +27,7 @@ class Location extends \DERHANSEN\SfEventMgt\Domain\Model\Location
      * Geocode location automatically when saving
      * @var bool
      */
-    protected bool $autoGeocode = true;
+    protected $autoGeocode = true;
 
     /**
      * __construct
