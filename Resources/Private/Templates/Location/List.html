@@ -7,12 +7,12 @@
 
 
 <f:section name="content">
-    <f:render partial="JsForMap"/>
+    <f:render partial="Map/JsForMap"/>
     <f:if condition="{locations}">
-        <f:render partial="Course/MapContainer" arguments="{settings: settings, height: 600}"/>
+        <f:render partial="Map/Container" arguments="{settings: settings, height: 600}"/>
         <ul id="js-course__records" style="display: none">
             <f:for each="{locations}" as="location">
-                <f:render partial="Location/Address" arguments="{address: location}"/>
+                <f:render partial="Map/Address" arguments="{address: location}"/>
             </f:for>
         </ul>
     </f:if>

@@ -103,10 +103,10 @@
 <f:comment><!-- RENDER MAP --></f:comment>
 <f:section name="renderMap">
     <f:if condition="{locations.0.latitude} && {locations.0.longitude}">
-        <f:render partial="Course/MapContainer" arguments="{settings: settings, height: 300}"/>
+        <f:render partial="Map/Container" arguments="{settings: settings, height: 300}"/>
         <ul id="js-course__records" style="display: none">
             <f:for each="{locations}" as="address">
-                <f:render partial="Course/Address" arguments="{address: address}"/>
+                <f:render partial="Map/Address" arguments="{address: address}"/>
             </f:for>
         </ul>
     </f:if>
