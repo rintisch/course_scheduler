@@ -14,10 +14,14 @@ function courseLeaflet() {
       return;
     }
 
-    obj.map = L.map(idOfMapElement).setView([51.505, -0.09], 13);
-    var mapBounds = L.latLngBounds();
+    obj.map = L.map(idOfMapElement, {
+      scrollWheelZoom: false
+    }).setView([51.505, -0.09],16);
+
+    let mapBounds = L.latLngBounds();
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
+      minZoom:7,
       attribution: 'Kartendaten &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> Mitwirkende, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Bilder © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -35,6 +39,13 @@ function courseLeaflet() {
     var group = new L.featureGroup(obj.markers);
 
     obj.map.fitBounds(group.getBounds());
+
+    // set zoom properly, depending on number of records
+    if(records.length === 1){
+      obj.map.setZoom(15);
+    } else {
+      obj.map.setZoom(obj.map.getZoom()-1);
+    }
   };
 
   obj.openMarker = function (markerId) {

@@ -15,26 +15,25 @@
                 </div>
             </f:if>
 
-            <div class="font-sans font-light text-lg">
+            <div class="font-sans font-light text-xl">
                 {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}
             </div>
             <f:for each="{course.location}" as="singleLocation">
-                <div class="text-lg pr-1 p-0 leading-none mt-1">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}',
+                <div class="text-base pr-1 p-0 leading-none mt-1">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}',
                     else:'{singleLocation.title}')}
                 </div>
             </f:for>
 
-            <div class="my-3 text-xl font-medium text-black leading-tight">{course.title}</div>
+            <div class="my-3 text-2xl text-black leading-tight">{course.title}</div>
 
             <f:if condition="{course.levelCategory}">
-                <div class="border-t border-primary-300 mt-2 pt-2 mb-1 flex flex-col">
+                <div class="mt-2 pt-2 mb-1">
                 <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
-                    <span class="mb-1 text-gray-600 text-sm  max-w-full truncate">{levelCategory.title}</span>
+                    <span class="rounded-full bg-primary-100 py-1 px-2 mr-1 md:inline-block text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
                 </f:for>
                 </div>
             </f:if>
             <f:if condition="{course.accessCategory}">
-                <hr class="border-transparent mb-1">
                 <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
                     <span class="text-gray-700 font-medium uppercase md:inline-block text-xs max-w-full truncate">{accessCategory.title}</span>
                 </f:for>
