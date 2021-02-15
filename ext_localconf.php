@@ -28,8 +28,14 @@ call_user_func(static function ($packageKey) {
         ]
     );
 
+    /**
+     * Override existing object classes
+     */
     GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\Container\Container::class)
         ->registerImplementation(\DERHANSEN\SfEventMgt\Domain\Model\Location::class, \Rintisch\CourseScheduler\Domain\Model\Location::class);
+
+    GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\Container\Container::class)
+        ->registerImplementation(\DERHANSEN\SfEventMgt\Domain\Repository\LocationRepository::class, \Rintisch\CourseScheduler\Domain\Repository\LocationRepository::class);
 
     //register hooks
     // event safe hook
