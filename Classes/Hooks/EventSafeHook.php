@@ -47,12 +47,18 @@ class EventSafeHook
     protected function geocode(&$modifiedFields, $pObj)
     {
 
+
         $userAgent = "rintisch-courseScheduler";
         $httpClient = new Client();
         $provider = Nominatim::withOpenStreetMapServer($httpClient, $userAgent);
         $geocoder = new StatefulGeocoder($provider, 'en');
 
         $completeAddress = $this->getAddress($modifiedFields, $pObj);
+
+        //return if no adress is given
+        if(!trim($completeAddress)){
+            return;
+        }
 
         try {
             $result = $geocoder->geocodeQuery(GeocodeQuery::create($completeAddress));
@@ -82,12 +88,15 @@ class EventSafeHook
     {
         // Do not process if foreign table, unintended action,
         // or fields were changed explicitly.
-        if ($table !== 'tx_sfeventmgt_domain_model_location' || $action !== 'update') {
+
+        if ($table === 'tx_sfeventmgt_domain_model_location' || $action === 'new') {
+            // do nothing, decide in next conditions
+        } elseif ($table !== 'tx_sfeventmgt_domain_model_location' || $action !== 'update') {
             return false;
         }
 
         // Do not process if user disabled automatic geocoding
-        if (in_array( 'auto_geocode', $modifiedFields)) {
+        if (array_key_exists( 'auto_geocode', $modifiedFields)) {
             if ((int)$modifiedFields['auto_geocode'] === 0) {
                 return false;
             } else {

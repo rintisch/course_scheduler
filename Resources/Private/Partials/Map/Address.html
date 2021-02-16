@@ -1,4 +1,4 @@
-<f:if condition="{address.latitude} && {address.longitude}">
+<f:if condition="{address.latitude} > 0 && {address.longitude} > 0">
     <div
         id="js-course__record-{address.uid}" data-id="{address.uid}" data-lat="{address.latitude}"
         data-lng="{address.longitude}" data-icon="icon">

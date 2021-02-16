@@ -26,6 +26,7 @@ $fields = [
                     'labelUnchecked' => 'Disabled',
                 ],
             ],
+            'default' => '1',
         ],
     ],
     'image' => [

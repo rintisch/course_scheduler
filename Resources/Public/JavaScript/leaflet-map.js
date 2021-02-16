@@ -43,8 +43,6 @@ function courseLeaflet() {
     // set zoom properly, depending on number of records
     if(records.length === 1){
       obj.map.setZoom(15);
-    } else {
-      obj.map.setZoom(obj.map.getZoom()-1);
     }
   };
 

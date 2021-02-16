@@ -42,8 +42,6 @@ class LocationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     {
         $locations = $this->locationRepository->findWithCurrentOrComingHapping();
 
-
-
         $this->view->assign('locations', $locations);
     }
 }
