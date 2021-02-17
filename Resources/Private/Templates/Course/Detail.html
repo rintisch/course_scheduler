@@ -10,7 +10,9 @@
     <f:variable name="stylingFactLabels">font-medium uppercase text-sm text-gray-500</f:variable>
     <f:if condition="{course.activityCategory}">
         <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
-            <span class="uppercase text-primary-800 opacity-70 text-lg sm:text-xl">{activityCategory.title}</span>
+            <span class="uppercase text-primary-800 opacity-70 text-lg sm:text-xl">
+                {activityCategory.title}{f:if(condition: '{iterator.isLast}', then: '', else: ', ')}
+            </span>
         </f:for>
     </f:if>
     <h2 class="mt-2 text-2xl sm:text-3xl">{course.title}</h2>
