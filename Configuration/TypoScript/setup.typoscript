@@ -18,7 +18,7 @@ plugin.tx_coursescheduler {
   }
   settings {
     timetable {
-      daysToRemove = {$plugin.tx_coursescheduler.settings.timetable.daysToRemove}
+      daysToRemoveIfEmpty = {$plugin.tx_coursescheduler.settings.timetable.daysToRemoveIfEmpty}
     }
     map {
 

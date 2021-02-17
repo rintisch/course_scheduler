@@ -10,7 +10,7 @@ plugin.tx_coursescheduler {
   }
   settings {
     timetable {
-      daysToRemove = sun
+      daysToRemoveIfEmpty = sat,sun
     }
   }
 }

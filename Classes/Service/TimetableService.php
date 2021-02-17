@@ -60,8 +60,13 @@ class TimetableService
         $weekPriorToMidday = $this->week;
         $weekAfterMidday = $this->week;
 
+        $now = new \DateTime('now');
+
         /** @var Course $course */
         foreach ($courses as $course) {
+            if($course->getCourseEndDate() < $now){
+                continue;
+            }
             if ($course->getCourseStartTime() < $this->middayTime) {
                 $this->findDayOfWeek($weekPriorToMidday, $course);
             } else {
@@ -70,10 +75,17 @@ class TimetableService
         }
 
         //remove days if set
-        $daysToRemove = explode(',', $settings['timetable']['daysToRemove']);
-        foreach($daysToRemove as $dayToRemove) {
-            unset($weekPriorToMidday[$dayToRemove]);
-            unset($weekAfterMidday[$dayToRemove]);
+        $daysToRemoveIfEmpty = explode(',', $settings['timetable']['daysToRemoveIfEmpty']);
+
+        // remove
+        foreach($daysToRemoveIfEmpty as $daysToRemoveIfEmpty) {
+            if(empty($weekPriorToMidday[$daysToRemoveIfEmpty])){
+            unset($weekPriorToMidday[$daysToRemoveIfEmpty]);
+            }
+
+            if(empty($weekAfterMidday[$daysToRemoveIfEmpty])) {
+                unset($weekAfterMidday[$daysToRemoveIfEmpty]);
+            }
         }
 
         //sort course within a day ascending for start time
