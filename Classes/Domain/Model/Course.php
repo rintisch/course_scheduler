@@ -71,14 +71,14 @@ class Course extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      *
      * @var \DateTime
      */
-    protected $courseStartDate = null;
+    protected $courseStartDate;
 
     /**
      * Date when the course ends
      *
      * @var \DateTime
      */
-    protected $courseEndDate = null;
+    protected $courseEndDate;
 
     /**
      * Activity category of course

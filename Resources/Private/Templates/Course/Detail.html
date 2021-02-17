@@ -1,6 +1,7 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
     xmlns:e="http://typo3.org/ns/Ssch/Typo3Encore/ViewHelpers"
+    xmlns:courseScheduler="http://typo3.org/ns/Rintisch/CourseScheduler/ViewHelpers"
     data-namespace-typo3-fluid="true">
 
 <f:layout name="General"/>
@@ -33,7 +34,7 @@
 
             <div>
                 <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.course_time_range"/>:</span><br>
-                {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}&nbsp;Uhr
+                {course.courseStartTime -> courseScheduler:time()} - {course.courseEndTime -> courseScheduler:time()}&nbsp;Uhr
             </div>
 
             <div class="mt-5">

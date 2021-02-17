@@ -223,24 +223,22 @@ return [
             'exclude' => true,
             'label' => $ll . 'tx_coursescheduler_domain_model_course.course_start_date',
             'config' => [
-                'dbType' => 'date',
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 7,
                 'eval' => 'date',
-                'default' => null,
+                'default' => 0,
             ],
         ],
         'course_end_date' => [
             'exclude' => true,
             'label' => $ll . 'tx_coursescheduler_domain_model_course.course_end_date',
             'config' => [
-                'dbType' => 'date',
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 7,
                 'eval' => 'date',
-                'default' => null,
+                'default' => 0,
             ],
         ],
         'image' => [

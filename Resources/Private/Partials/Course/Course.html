@@ -1,3 +1,4 @@
+{namespace courseScheduler=Rintisch\CourseScheduler\ViewHelpers}
 <div class="font-sans font-light break-words bg-primary-200 p-8 md:px-2 md:py-4 col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} md:row-start-{gridRow.cycle + 1} md:row-end-{gridRow.cycle + 2} rounded hover:bg-primary-300 shadow-md hover:shadow-none transition">
     <f:link.action
         class="course-scheduler-ajaxified no-underline hover:no-underline text-gray-800"
@@ -16,7 +17,7 @@
             </f:if>
 
             <div class="font-sans font-light text-xl">
-                {course.courseStartTime -> f:format.date(format: 'H:i')} - {course.courseEndTime -> f:format.date(format: 'H:i')}
+                {course.courseStartTime -> courseScheduler:time()} - {course.courseEndTime -> courseScheduler:time()}
             </div>
             <f:for each="{course.location}" as="singleLocation">
                 <div class="text-base pr-1 p-0 leading-none mt-1">{f:if(condition: '{singleLocation.abbreviation}', then: '{singleLocation.abbreviation}',
