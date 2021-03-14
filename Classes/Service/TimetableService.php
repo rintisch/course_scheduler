@@ -92,7 +92,19 @@ class TimetableService
         $weekPriorToMidday = array_map(array($this, 'sortSingleDay'), $weekPriorToMidday);
         $weekAfterMidday = array_map(array($this, 'sortSingleDay'), $weekAfterMidday);
 
+        $coursesPriorToMidday = 0;
+        array_walk_recursive($weekPriorToMidday, function($value, $key) use (&$coursesPriorToMidday){
+            $coursesPriorToMidday ++;
+        }, $coursesPriorToMidday);
+
+        $coursesAfterMidday = 0;
+        array_walk_recursive($weekAfterMidday, function($value, $key) use (&$coursesAfterMidday){
+            $coursesAfterMidday ++;
+        }, $coursesAfterMidday);
+
         return [
+            'coursesPriorToMidday' => $coursesPriorToMidday,
+            'coursesAfterMidday' => $coursesAfterMidday,
             'weekPriorToMidday' => $weekPriorToMidday,
             'weekAfterMidday' => $weekAfterMidday
         ];
