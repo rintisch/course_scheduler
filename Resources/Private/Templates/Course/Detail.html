@@ -16,7 +16,7 @@
         </f:for>
     </f:if>
     <h2 class="mt-2 text-2xl sm:text-3xl">{course.title}</h2>
-    <div class="grid md:grid-cols-3 gap-8 md:gap-12 mt-4 sm:mt-6 md:mt-10">
+    <div class="ce-plugintext grid md:grid-cols-3 gap-8 md:gap-12 mt-4 sm:mt-6 md:mt-10">
         <div class="md:col-span-2 flex flex-col justify-between">
             <div class="text-lg md:text-xl">
                 <f:format.html>{course.description}</f:format.html>
@@ -35,6 +35,13 @@
             </f:if>
         </div>
         <div class="font-sans text-base font-light">
+            <f:if condition="{settings.registrationPid}">
+                <f:link.page
+                    pageUid="{settings.registrationPid}"
+                    class="btn btn-primary w-full text-center py-4 mb-8">
+                    Anmelden
+                </f:link.page>
+            </f:if>
 
             <div>
                 <span class="{stylingFactLabels}"><f:translate key="tx_coursescheduler_domain_model_course.course_time_range"/>:</span><br>

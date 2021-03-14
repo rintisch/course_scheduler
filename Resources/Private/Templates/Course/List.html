@@ -18,14 +18,14 @@
                     <h2>
                         <f:translate key="tx_coursescheduler_partOfDay.forenoon"/>
                     </h2>
-                    <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday}"/>
+                    <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekPriorToMidday, settings: settings}"/>
                 </f:if>
 
                 <f:if condition="{courses.coursesAfterMidday}">
                     <h2 class="mt-8">
                         <f:translate key="tx_coursescheduler_partOfDay.afternoon"/>
                     </h2>
-                    <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday}"/>
+                    <f:render partial="Course/HalfOfDay" arguments="{halfOfDay: courses.weekAfterMidday, settings: settings}"/>
                 </f:if>
             </f:then>
             <f:else>

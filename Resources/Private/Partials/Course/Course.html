@@ -6,7 +6,7 @@
         pluginName="SingleCourse"
         controller="Course"
         action="detail"
-        arguments="{course: course.uid}">
+        arguments="{course: course.uid, settings: settings}">
         <div class="pointer-events-none">
             <f:if condition="{course.activityCategory}">
                 <div class="font-medium text-xs lg:text-sm text-primary-900 opacity-60 uppercase">

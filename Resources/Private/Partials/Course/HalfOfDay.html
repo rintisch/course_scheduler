@@ -6,7 +6,7 @@
                 </p>
             </header>
             <f:for each="{dayCourses}" as="course" iteration="gridRow">
-                <f:render partial="Course/Course" arguments="{course: course, gridRow: gridRow, gridCol: gridCol}"/>
+                <f:render partial="Course/Course" arguments="{course: course, gridRow: gridRow, gridCol: gridCol, settings: settings}"/>
             </f:for>
     </f:for>
 </div>

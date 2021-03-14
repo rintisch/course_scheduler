@@ -15,6 +15,10 @@
 			<trans-unit id="settings.displayMode.map">
 				<target>Karte</target>
 			</trans-unit>
+
+			<trans-unit id="settings.registrationPid">
+				<source>Seite mit Anmeldeformular</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
