@@ -9,15 +9,16 @@
     -->
 </f:comment>
 
-<div class="font-sans font-light break-words bg-white p-2 sm:p-4 lg:p-8 md:px-2 md:py-4 col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} md:row-start-{gridRow.cycle + 1} md:row-end-{gridRow.cycle + 2} rounded shadow hover:shadow-lg transition">
+<div class="font-sans font-light break-words bg-white col-start-1 col-end-2 md:col-start-{gridCol.cycle} md:col-end-{gridCol.cycle + 1} md:row-start-{gridRow.cycle + 1} md:row-end-{gridRow.cycle + 2} rounded shadow hover:shadow-lg transition">
     <f:link.action
-        class="course-scheduler-ajaxified no-underline hover:no-underline text-gray-800"
+        class="no-underline hover:no-underline text-gray-800"
         extensionName="coursescheduler"
         pluginName="SingleCourse"
         controller="Course"
         action="detail"
-        arguments="{course: course.uid, settings: settings}">
-        <div class="pointer-events-none">
+        pageUid="{settings.detailPid}"
+        arguments="{course: course.uid}">
+        <div class="pointer-events-none p-2 sm:p-4 lg:p-8 md:px-2 md:py-4">
             <f:if condition="{course.activityCategory}">
                 <div class="font-medium text-xs lg:text-sm text-primary-900 opacity-60 uppercase">
                     <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">

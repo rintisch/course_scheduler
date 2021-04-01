@@ -10,7 +10,7 @@ call_user_func(static function ($packageKey) {
         'Rintisch.' . $packageKey,
         'Courses',
         [
-            'Course' => 'list, detail'
+            'Course' => 'list'
         ]
     );
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(

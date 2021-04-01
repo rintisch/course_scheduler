@@ -16,6 +16,9 @@
 				<source>Map</source>
 			</trans-unit>
 
+			<trans-unit id="settings.detailPid">
+				<source>Page with detail plugin for courses</source>
+			</trans-unit>
 			<trans-unit id="settings.registrationPid">
 				<source>Page with registration form</source>
 			</trans-unit>

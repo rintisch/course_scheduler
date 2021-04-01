@@ -16,6 +16,9 @@
 				<target>Karte</target>
 			</trans-unit>
 
+			<trans-unit id="settings.detailPid">
+				<source>Seite mit Detailansicht-Plugin für Kurse</source>
+			</trans-unit>
 			<trans-unit id="settings.registrationPid">
 				<source>Seite mit Anmeldeformular</source>
 			</trans-unit>

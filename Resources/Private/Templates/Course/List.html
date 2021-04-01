@@ -7,10 +7,6 @@
 
 <f:section name="content">
 
-    <f:render partial="Map/JsForMap"/>
-
-    <e:renderWebpackScriptTags entryName="timetable"/>
-
     <div class="course-scheduler">
         <f:if condition="{courses}">
             <f:then>
@@ -33,7 +29,6 @@
             </f:else>
         </f:if>
     </div>
-    <f:render partial="Course/DetailModal"/>
 </f:section>
 
 </html>

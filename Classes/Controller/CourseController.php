@@ -63,14 +63,10 @@ class CourseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
      * action detail
      *
      * @param \Rintisch\CourseScheduler\Domain\Model\Course $course
-     * @param array $settings
      * @return void
      */
-    public function detailAction(\Rintisch\CourseScheduler\Domain\Model\Course $course, array $settings = [])
+    public function detailAction(\Rintisch\CourseScheduler\Domain\Model\Course $course)
     {
-        $this->view->assignMultiple([
-            'course' => $course,
-            'settings' => $settings
-        ]);
+        $this->view->assign('course', $course);
     }
 }

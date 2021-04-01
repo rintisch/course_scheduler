@@ -31,9 +31,9 @@
                         </TCEforms>
                     </settings.displayMode>
 
-                    <settings.registrationPid>
+                    <settings.detailPid>
                         <TCEforms>
-                            <label>LLL:EXT:course_scheduler/Resources/Private/Language/locallang_be.xlf:settings.registrationPid</label>
+                            <label>LLL:EXT:course_scheduler/Resources/Private/Language/locallang_be.xlf:settings.detailPid</label>
                             <config>
                                 <type>group</type>
                                 <internal_type>db</internal_type>
@@ -49,7 +49,7 @@
                                 </wizards>
                             </config>
                         </TCEforms>
-                    </settings.registrationPid>
+                    </settings.detailPid>
 
                     <!-- end of settings -->
 
