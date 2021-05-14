@@ -18,7 +18,10 @@
         action="detail"
         pageUid="{settings.detailPid}"
         arguments="{course: course.uid}">
-        <div class="pointer-events-none p-2 sm:p-4 lg:p-8 md:px-2 md:py-4">
+        <div class="pointer-events-none p-2 sm:p-4 lg:p-8 md:px-2 md:py-4 relative">
+            <f:if condition="{course.courseStartDate -> f:format.date(format: 'Y-m-d')} > {f:format.date(date: 'now', format: 'Y-m-d')}">
+                <div class="absolute top-0 right-0 py-2 px-4 text-xs font-medium text-primary-800 bg-primary-200 rounded-bl-2xl shadow opacity-75">Ab {course.courseEndDate -> f:format.date(format: '%d.%m.%y')}</div>
+            </f:if>
             <f:if condition="{course.activityCategory}">
                 <div class="font-medium text-xs lg:text-sm text-primary-900 opacity-60 uppercase">
                     <f:for each="{course.activityCategory}" as="activityCategory" iteration="iterator">
@@ -39,15 +42,15 @@
             <div class="my-3 text-lg font-medium lg:font-light lg:text-2xl text-black leading-tight">{course.title}</div>
 
             <f:if condition="{course.levelCategory}">
-                <div class="lg:mt-2 lg:pt-2 mb-1">
-                <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
-                    <span class="rounded-full bg-primary-200 py-1 px-1 lg:px-2 -ml-1 -lg:ml-2 mr-2 md:inline-block text-xs lg:text-sm mb-1 max-w-full truncate">{levelCategory.title}</span>
-                </f:for>
+                <div class="lg:mt-2 lg:pt-2 mb-1 flex flex-wrap">
+                    <f:for each="{course.levelCategory}" as="levelCategory" iteration="iterator">
+                        <span class="flex-initial rounded-full bg-primary-200 py-1 px-1 lg:px-2 -ml-1 -lg:ml-2 mr-2 text-xs lg:text-sm mb-1 truncate">{levelCategory.title}</span>
+                    </f:for>
                 </div>
             </f:if>
             <f:if condition="{course.accessCategory}">
                 <f:for each="{course.accessCategory}" as="accessCategory" iteration="iterator">
-                    <span class="text-gray-700 font-medium uppercase md:inline-block text-xs max-w-full truncate">{accessCategory.title}</span>
+                    <span class="text-gray-700 font-medium uppercase text-xs truncate">{accessCategory.title}</span>
                 </f:for>
             </f:if>
         </div>
