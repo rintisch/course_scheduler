@@ -43,3 +43,13 @@ tx_coursescheduler_ajaxPage {
 
   10 < tt_content.list.20.coursescheduler_singlecourse
 }
+
+#==============================================
+# Page Title provider
+#==============================================
+config.pageTitleProviders {
+  tx_sfeventmgt {
+    provider = Rintisch\CourseScheduler\PageTitle\CoursePageTitleProvider
+    before = record
+  }
+}

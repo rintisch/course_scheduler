@@ -375,7 +375,11 @@ return [
                 'type' => 'slug',
                 'size' => 50,
                 'generatorOptions' => [
-                    'fields' => ['title'],
+                    'fields' => [
+                        0 => 'title',
+                        1 => 'course_start_date'
+                    ],
+                    'fieldSeparator' => '-ab-',
                     'replacements' => [
                         '/' => '-'
                     ],
