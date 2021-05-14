@@ -6,7 +6,7 @@
 
 <f:layout name="General"/>
 <f:section name="content">
-
+    <courseScheduler:title courseTitle="{course.title}" locationName="{course.location.0.title}" locationCity="{course.location.0.city}" />
     <f:render partial="Map/JsForMap"/>
 
     <f:variable name="stylingFactLabels">font-medium uppercase text-sm text-gray-500</f:variable>
