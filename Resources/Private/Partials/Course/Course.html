@@ -20,7 +20,7 @@
         arguments="{course: course.uid}">
         <div class="pointer-events-none p-2 sm:p-4 lg:p-8 md:px-2 md:py-4 relative">
             <f:if condition="{course.courseStartDate -> f:format.date(format: 'Y-m-d')} > {f:format.date(date: 'now', format: 'Y-m-d')}">
-                <div class="absolute top-0 right-0 py-1 px-3 text-xs font-medium text-primary-800 bg-primary-200 rounded-bl-2xl shadow opacity-75">Ab {course.courseEndDate -> f:format.date(format: '%d.%m.%y')}</div>
+                <div class="absolute top-0 right-0 py-1 px-3 text-xs font-medium text-primary-800 bg-primary-200 rounded-bl-2xl shadow opacity-75">Ab {course.courseStartDate -> f:format.date(format: '%d.%m.%y')}</div>
             </f:if>
             <f:if condition="{course.activityCategory}">
                 <div class="font-medium text-xs lg:text-sm text-primary-900 opacity-60 uppercase">
