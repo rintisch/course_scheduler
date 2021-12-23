@@ -2,7 +2,7 @@
   "name": "rintisch/course-scheduler",
   "type": "typo3-cms-extension",
   "description": "Show recurring courses in a weekly scheduler",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "Gerald Rintisch",
@@ -10,8 +10,8 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^9.5 || ^10.4",
-    "php-http/guzzle6-adapter": "^2.0",
+    "typo3/cms-core": "^11.5",
+    "php-http/guzzle7-adapter": "^1.0",
     "geocoder-php/nominatim-provider": "^5.4",
     "php-http/message": "^1.10.0"
   },

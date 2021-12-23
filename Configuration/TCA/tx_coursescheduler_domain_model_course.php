@@ -37,7 +37,7 @@ return [
                 --palette--;' . $ll . 'tx_coursescheduler_domain_model_course.hour_range;hour_range,
                 location,
             --div--;' . $ll . 'tx_coursescheduler_domain_model_course.categories,
-                access_category, activity_category, level_category,
+                --palette--;' . $ll . 'tx_coursescheduler_domain_model_course.categories;course_categories,
             --div--;' . $ll . 'tx_coursescheduler_domain_model_course.price,
                 price, price_information,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
@@ -388,6 +388,27 @@ return [
                 'eval' => 'uniqueInSite',
                 'default' => ''
             ]
+        ],
+        'activity_category' => [
+            'exclude' => 1,
+            'label' => $ll . 'category.activity_category',
+            'config' => [
+                'type' => 'category',
+            ],
+        ],
+        'level_category' => [
+            'exclude' => 1,
+            'label' => $ll . 'category.level_category',
+            'config' => [
+                'type' => 'category',
+            ],
+        ],
+        'access_category' => [
+            'exclude' => 1,
+            'label' => $ll . 'category.access_category',
+            'config' => [
+                'type' => 'category',
+            ],
         ],
     ],
 ];

@@ -4,27 +4,26 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3_MODE') or die();
 
-
-call_user_func(static function ($packageKey) {
+call_user_func(function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Rintisch.' . $packageKey,
+        'CourseScheduler',
         'Courses',
         [
-            'Course' => 'list'
+            \Rintisch\CourseScheduler\Controller\CourseController::class => 'list'
         ]
     );
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Rintisch.' . $packageKey,
+        'CourseScheduler',
         'Locations',
         [
-            'Location' => 'list'
+            \Rintisch\CourseScheduler\Controller\LocationController::class => 'list'
         ]
     );
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Rintisch.' . $packageKey,
+        'CourseScheduler',
         'SingleCourse',
         [
-            'Course' => 'detail'
+            \Rintisch\CourseScheduler\Controller\CourseController::class => 'detail'
         ]
     );
 
@@ -39,6 +38,6 @@ call_user_func(static function ($packageKey) {
 
     //register hooks
     // event safe hook
-    $GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][$packageKey] = 'Rintisch\\CourseScheduler\\Hooks\\EventSafeHook';
+    $GLOBALS ['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass']['course_scheduler'] = 'Rintisch\\CourseScheduler\\Hooks\\EventSafeHook';
 
-}, 'course_scheduler');
+});
